@@ -1,0 +1,11 @@
+{
+  "name": "corecss",
+  "version": "0.0.0",
+  "description": "A lightweight CSS foundation",
+  "repository": "git@github.com:chris-pearce/corecss.git",
+  "author": "Chris Pearce <crite70@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "normalize.css": "^7.0.0"
+  }
+}
