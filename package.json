@@ -1,8 +1,8 @@
 {
-  "name": "corecss",
+  "name": "cssbackpack",
   "version": "0.0.0",
-  "description": "A lightweight CSS foundation",
-  "repository": "git@github.com:chris-pearce/corecss.git",
+  "description": "A lightweight and somewhat opinionated CSS foundation that is best suited for applications.",
+  "repository": "git@github.com:chris-pearce/backpack.git",
   "author": "Chris Pearce <crite70@gmail.com>",
   "license": "MIT",
   "dependencies": {
