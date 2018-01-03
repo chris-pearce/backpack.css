@@ -1,4 +1,4 @@
-# corecss
+# backpack 🎒
 
 A lightweight and somewhat opinionated CSS foundation that is best suited for applications.
 
