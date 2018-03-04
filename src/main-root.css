@@ -1,0 +1,18 @@
+/**
+ * Main root
+ * ⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺
+ *
+ * 1. Set the font family of the entire document to use the new 'system-ui'
+ *    `font-family` value, cssnext will provide a fallback for non-supporting
+ *    user-agents. See: http://cssnext.io/features/#system-ui-font-family.
+ * 2. Set the font size of the entire document using the default user-agent size
+ *    which is typically 16px.
+ * 3. Increase the line height from normalize.css's small '1.15' value. The
+ *    larger '1.5' value is recommended by the W3C Web Accessibility Initiative.
+ */
+
+html {
+  font-family: system-ui; /* 1 */
+  font-size: 1rem; /* 2 */
+  line-height: 1.5; /* 3 */
+}

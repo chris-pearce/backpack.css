@@ -1,5 +1,10 @@
-node_modules
+# Folders and files
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
+
+# Dot files
 .cache
-dist
 .DS_Store
 .vscode

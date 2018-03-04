@@ -1,0 +1,23 @@
+/**
+ * Content sectioning
+ * ⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺
+ */
+
+/**
+ * We scope our heading styles to classes instead of the `<hx>` element selector
+ * so our styles are not tied to their semantics, i.e., if you want a `<h4>` to
+ * look like a `<h2>` you can easily do this. All of the heading elements are
+ * reset to have the same styles as the base copy.
+ * See: https://medium.com/fed-or-dead/handling-headings-in-a-ui-component-library-2587de93c890
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: normal;
+  line-height: inherit;
+}

@@ -1,0 +1,29 @@
+/**
+ * Resets
+ * ⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺
+ */
+
+/*
+ * Remove margins, paddings, and borders from all elements except `<input>` so
+ * that everything is on an even playing field.
+ */
+
+*:not(input) {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Apply the nicer `border-box` value to make life easier when sizing elements.
+ */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
