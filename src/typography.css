@@ -1,9 +1,4 @@
 /**
- * Typography
- * ⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺
- */
-
-/**
  * OpenType features.
  *
  * Due to the poor support of the `font-variant-` properties we have to declare
@@ -30,7 +25,7 @@
  */
 
 html {
-  font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
+  font-feature-settings: 'kern', 'liga', 'clig', 'calt', 'onum', 'pnum';
   font-kerning: normal;
   font-variant-ligatures: common-ligatures contextual;
   font-variant-numeric: oldstyle-nums proportional-nums;
@@ -47,16 +42,16 @@ html {
  * Enable lining numerals.
  */
 
-[type="color"],
-[type="date"],
-[type="datetime-local"],
-[type="month"],
-[type="number"],
-[type="range"],
-[type="tel"],
-[type="time"],
-[type="week"] {
-  font-feature-settings: "kern" 0, "onum" 0, "lnum";
+[type='color'],
+[type='date'],
+[type='datetime-local'],
+[type='month'],
+[type='number'],
+[type='range'],
+[type='tel'],
+[type='time'],
+[type='week'] {
+  font-feature-settings: 'kern' 0, 'onum' 0, 'lnum';
   font-kerning: none;
   font-variant-numeric: lining-nums;
 }
@@ -97,8 +92,8 @@ code,
 kbd,
 pre,
 samp {
-  font-feature-settings: "kern" 0, "liga" 0, "clig" 0, "onum" 0, "pnum" 0,
-    "tnum", "lnum", "zero";
+  font-feature-settings: 'kern' 0, 'liga' 0, 'clig' 0, 'onum' 0, 'pnum' 0,
+    'tnum', 'lnum', 'zero';
   font-kerning: none;
   font-variant-ligatures: contextual;
   font-variant-numeric: lining-nums tabular-nums slashed-zero;
@@ -112,6 +107,6 @@ samp {
  */
 
 td {
-  font-feature-settings: "onum" 0, "pnum" 0, "lnum", "tnum", "zero";
+  font-feature-settings: 'onum' 0, 'pnum' 0, 'lnum', 'tnum', 'zero';
   font-variant-numeric: lining-nums tabular-nums slashed-zero;
 }

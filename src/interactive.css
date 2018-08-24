@@ -1,13 +1,8 @@
 /**
- * Interactive
- * ⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺
- */
-
-/**
  * Indicates that a label will shift focus to its associated control.
  */
 
-label {
+label[for] {
   cursor: pointer;
 }
 
@@ -19,7 +14,7 @@ label {
  * i.e., we always want this rule to take precedence.
  */
 
-[tabindex="-1"]:focus {
+[tabindex='-1']:focus {
   outline: none !important;
 }
 
@@ -42,6 +37,6 @@ label,
 select,
 summary,
 textarea,
-[tabindex]:not([tabindex="-1"]) {
+[tabindex]:not([tabindex='-1']) {
   touch-action: manipulation;
 }

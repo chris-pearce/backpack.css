@@ -2,11 +2,9 @@
   "name": "backpack.css",
   "main": "backpack.css",
   "version": "0.0.0",
-  "description":
-    "A lightweight and somewhat opinionated CSS foundation that is best suited to applications 🎒.",
+  "description": "A lightweight and somewhat opinionated CSS foundation that is best suited to applications 🎒.",
   "scripts": {
-    "bundle":
-      "postcss src/index.css -u postcss-import --no-map -o dist/backpack.css",
+    "bundle": "postcss src/index.css -u postcss-import --no-map -o dist/backpack.css",
     "build": "npm run bundle",
     "prebuild": "rimraf dist/"
   },
@@ -14,11 +12,11 @@
   "author": "Chris Pearce <crite70@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "normalize.css": "^8.0.0"
+    "normalize.css": "^8.0.0",
+    "postcss-import": "^11.1.0"
   },
   "devDependencies": {
     "postcss-cli": "^5.0.0",
-    "postcss-import": "^11.1.0",
     "rimraf": "^2.6.2"
   }
 }

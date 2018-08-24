@@ -1,0 +1,129 @@
+/**
+ * NOTE: it's okay to use `!important` here as we're doing it pre-emptively,
+ * i.e., we always want these rules to take precedence.
+ */
+
+@media print {
+  /**
+   * 1. Remove styles that are poor for printing.
+   * 2. Black prints faster!
+   */
+
+  *,
+  *::after,
+  *::before {
+    background: transparent !important; /* [1] */
+    box-shadow: none !important; /* [1] */
+    color: black !important; /* [2] */
+    text-shadow: none !important; /* [1] */
+  }
+
+  /**
+   * Hide elements that are not appriopate for print.
+   */
+
+  audio,
+  nav,
+  video {
+    display: none !important;
+  }
+
+  /**
+   * Ensure all images are responsive.
+   */
+
+  img {
+    height: auto !important;
+    max-width: 100% !important;
+  }
+
+  /**
+   * Make links always stand out.
+   */
+
+  a,
+  a:visited {
+    border-bottom: 0 !important;
+    text-decoration: underline !important;
+  }
+
+  /**
+   * Show the `[href]` and `[title]` attribute values of links and abbreviations
+   * via their `::after` pseudo element.
+   */
+
+  a[href]::after {
+    content: ' (' attr(href) ')';
+  }
+
+  abbr[title]::after {
+    content: ' (' attr(title) ')';
+  }
+
+  /**
+   * Don't show links that are fragment identifiers or use the `javascript:`
+   * pseudo protocol.
+   */
+
+  a[href^='javascript:']::after,
+  a[href^='#']::after {
+    content: '';
+  }
+
+  /**
+   * Make the header row repeated at the top of each printed page.
+   *
+   * ✌︎ Credit
+   * http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  /**
+   * Better formatted `<pre>`s.
+   */
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  /**
+   * Page breaks.
+   */
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  blockquote,
+  dl,
+  img,
+  ol,
+  pre,
+  tr,
+  ul {
+    page-break-inside: avoid;
+  }
+
+  /**
+   * Orphans and widows.
+   */
+
+  h2,
+  h3,
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /**
+   * Apply bottom margin to all paragraphs.
+   */
+
+  p:not(:last-child) {
+    margin-bottom: 1.5rem !important;
+  }
+}

@@ -1,12 +1,7 @@
 /**
- * Image and multimedia
- * ⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺
- */
-
-/**
  * Make all images responsive.
  *
- * 1. Override the height to auto, otherwise images will be stretched when
+ * 1. Override the height to 'auto', otherwise images will be stretched when
  *    setting a width and height attribute on the `<img>` element.
  * 2. Set a maximum relative to the parent.
  */

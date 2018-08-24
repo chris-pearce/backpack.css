@@ -6,7 +6,6 @@
 
 /**
  * Contents
- * ⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺
  *
  * 1.  normalize.css ‡
  * 2.  Resets
@@ -18,21 +17,20 @@
  * 8.  Table content †
  * 9.  Typography
  * 10. Interactive
- * 11. Utilities
+ * 11. Print
  *
  * ‡ Comes from 'node_modules'.
- * † These section names come from MDN's HTML elements reference document.
- * See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element.
+ * † Section names come from MDN's HTML elements reference document. See:
+ * https://developer.mozilla.org/en-US/docs/Web/HTML/Element.
  */
 
-@import "normalize.css";
-@import "resets.css";
-@import "main-root.css";
-@import "forms.css";
-@import "content-sectioning.css";
-@import "text-content.css";
-@import "image-and-multimedia.css";
-@import "table-content.css";
-@import "typography.css";
-@import "interactive.css";
-@import "utilities.css";
+@import 'normalize.css';
+@import 'resets.css';
+@import 'main-root.css';
+@import 'forms.css';
+@import 'content-sectioning.css';
+@import 'text-content.css';
+@import 'image-and-multimedia.css';
+@import 'table-content.css';
+@import 'typography.css';
+@import 'interactive.css';

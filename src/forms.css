@@ -1,8 +1,3 @@
-/**
- * Forms
- * ⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺
- */
-
 /*
  * Override normalize.css's opinionated styles, `line-height` is set to
  * 'normal' as that's what most user-agents use.
@@ -22,9 +17,9 @@ textarea {
  * 2. Remove rounded corners that iOS applies to all `<input>` buttons.
  */
 
-[type="submit"],
-[type="button"],
-[type="reset"],
+[type='submit'],
+[type='button'],
+[type='reset'],
 button {
   background: transparent; /* 1 */
   border: 0; /* 1 */
@@ -41,18 +36,18 @@ button {
       inputs.
  */
 
-[type="date"],
-[type="datetime-local"],
-[type="email"],
-[type="month"],
-[type="number"],
-[type="password"],
-[type="search"],
-[type="tel"],
-[type="text"],
-[type="time"],
-[type="url"],
-[type="week"] {
+[type='date'],
+[type='datetime-local'],
+[type='email'],
+[type='month'],
+[type='number'],
+[type='password'],
+[type='search'],
+[type='tel'],
+[type='text'],
+[type='time'],
+[type='url'],
+[type='week'] {
   background-clip: padding-box; /* 1 */
   padding: 0; /* 2 */
 }
@@ -107,6 +102,6 @@ body:not(:-moz-handler-blocked) fieldset {
  * See: https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile.
  */
 
-[role="button"] {
+[role='button'] {
   cursor: pointer;
 }
