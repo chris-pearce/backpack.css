@@ -1,5 +1,5 @@
 /**
- * 1. Set the font family of the entire document to use the new 'system-ui'
+ * 1. Set the font family of the entire document to use the 'system-ui'
  *    `font-family` value.
  * 2. Set the font size of the entire document using the default user-agent size
  *    which is typically 16px.
@@ -8,7 +8,7 @@
  */
 
 html {
-  font-family: system-ui; /* 1 */
+  font-family: system-ui, sans-serif; /* 1 */
   font-size: 1rem; /* 2 */
   line-height: 1.5; /* 3 */
 }
