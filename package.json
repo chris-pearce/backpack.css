@@ -20,7 +20,7 @@
     "build": "yarn bundle && yarn copy",
     "prebuild": "yarn clean",
     "version": "npm run build && git add .",
-    "postversion": "git push && git push --tags && yarn clean && npm publish"
+    "postversion": "git push && git push --tags && npm publish && yarn clean"
   },
   "repository": "git@github.com:chris-pearce/backpack.css.git",
   "author": "Chris Pearce <hello@cjpearce.com>",
