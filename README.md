@@ -120,7 +120,7 @@ Once new changes have been merged do the following:
 
 1. Add all new changes to [`CHANGELOG.md`](CHANGELOG.md) making sure to follow the existing format.
 2. Update the version number in [`index.css`](src/index.css).
-3. Run: `npm version <update_type>` where `<update_type>` is one of the semantic versioning release types: **patch**, **minor**, or **major** (see [versioning](#versioning)).
+3. Run: `npm version <update_type> --force` where `<update_type>` is one of the semantic versioning release types: **patch**, **minor**, or **major** (see [versioning](#versioning)).
 
 ### The breakdown of step 3
 
