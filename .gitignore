@@ -1,6 +1,6 @@
 # Folders and files
 node_modules/
-dist/
+lib/
 npm-debug.log
 yarn-error.log
 

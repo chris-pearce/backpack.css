@@ -1,5 +1,5 @@
 /*!
- * backpack.css v0.0.0
+ * backpack.css v1.0.0
  * MIT License
  * https://github.com/chris-pearce/backpack.css
  */
@@ -34,3 +34,4 @@
 @import 'table-content.css';
 @import 'typography.css';
 @import 'interactive.css';
+@import 'print.css';

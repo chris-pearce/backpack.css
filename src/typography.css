@@ -38,8 +38,7 @@ html {
 /**
  * Specific input types, mostly numeric.
  *
- * Remove kerning and proportional, oldstyle numerals.
- * Enable lining numerals.
+ * Remove kerning and proportional, oldstyle numerals. Enable lining numerals.
  */
 
 [type='color'],
@@ -84,8 +83,8 @@ html {
 }
 
 /**
- * Remove kerning and common/standard ligatures.
- * Enable lining numerals, tabular numerals, and slashed zero.
+ * Remove kerning and common/standard ligatures. Enable lining numerals, tabular
+ * numerals, and slashed zero.
  */
 
 code,
@@ -102,8 +101,8 @@ samp {
 /**
  * Table content.
  *
- * Remove proportional and oldstyle numerals.
- * Enable lining numerals, tabular numerals, and slashed zero.
+ * Remove proportional and oldstyle numerals. Enable lining numerals, tabular
+ * numerals, and slashed zero.
  */
 
 td {

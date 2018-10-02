@@ -12,10 +12,10 @@
   *,
   *::after,
   *::before {
-    background: transparent !important; /* [1] */
-    box-shadow: none !important; /* [1] */
-    color: black !important; /* [2] */
-    text-shadow: none !important; /* [1] */
+    background: transparent !important; /* 1 */
+    box-shadow: none !important; /* 1 */
+    color: black !important; /* 2 */
+    text-shadow: none !important; /* 1 */
   }
 
   /**
@@ -73,8 +73,7 @@
   /**
    * Make the header row repeated at the top of each printed page.
    *
-   * ✌︎ Credit
-   * http://css-discuss.incutio.com/wiki/Printing_Tables
+   * ✌︎ Credit http://css-discuss.incutio.com/wiki/Printing_Tables
    */
 
   thead {

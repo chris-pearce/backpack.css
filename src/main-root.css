@@ -1,6 +1,5 @@
 /**
- * 1. Set the font family of the entire document to use the 'system-ui'
- *    `font-family` value.
+ * 1. Set the font family of the entire document to use 'system-ui'.
  * 2. Set the font size of the entire document using the default user-agent size
  *    which is typically 16px.
  * 3. Increase the line height from normalize.css's small '1.15' value. The

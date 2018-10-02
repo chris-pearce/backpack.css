@@ -7,6 +7,6 @@
  */
 
 img {
-  height: auto; /* [1] */
-  max-width: 100%; /* [2] */
+  height: auto; /* 1 */
+  max-width: 100%; /* 2 */
 }

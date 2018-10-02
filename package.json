@@ -1,22 +1,35 @@
 {
   "name": "backpack.css",
-  "main": "backpack.css",
+  "main": "lib/backpack.css",
   "version": "0.0.0",
   "description": "A lightweight and somewhat opinionated CSS foundation that is best suited to applications 🎒.",
+  "keywords": [
+    "css",
+    "css-library",
+    "css-foundation",
+    "css-reset",
+    "css-normalise"
+  ],
+  "files": [
+    "lib"
+  ],
   "scripts": {
-    "bundle": "postcss src/index.css -u postcss-import --no-map -o dist/backpack.css",
-    "build": "npm run bundle",
-    "prebuild": "rimraf dist/"
+    "bundle": "postcss src/index.css -u postcss-import --no-map -o lib/backpack.css",
+    "clean": "rimraf lib",
+    "copy": "cp -r src/* lib && rm lib/index.css",
+    "build": "yarn bundle && yarn copy",
+    "prebuild": "yarn clean",
+    "version": "npm run build && git add .",
+    "postversion": "git push && git push --tags && yarn clean && npm publish"
   },
   "repository": "git@github.com:chris-pearce/backpack.css.git",
-  "author": "Chris Pearce <crite70@gmail.com>",
+  "author": "Chris Pearce <hello@cjpearce.com>",
   "license": "MIT",
-  "dependencies": {
-    "normalize.css": "^8.0.0",
-    "postcss-import": "^11.1.0"
-  },
   "devDependencies": {
-    "postcss-cli": "^5.0.0",
+    "normalize.css": "^8.0.0",
+    "postcss-cli": "^6.0.0",
+    "postcss-import": "^12.0.0",
+    "prettier": "^1.14.3",
     "rimraf": "^2.6.2"
   }
 }
