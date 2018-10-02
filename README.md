@@ -14,7 +14,7 @@ A lightweight and somewhat opinionated CSS foundation that is best suited to app
 - [Evolution](#evolution)
 - [Browser support](#browser-support)
 - [Publishing](#publishing)
-- [The breakdown of step 3](#the-breakdown-of-step-3)
+  - [The breakdown of step 3](#the-breakdown-of-step-3)
 - [Contributing](#contributing)
 - [Versioning](#versioning)
 
@@ -122,7 +122,7 @@ Once new changes have been merged do the following:
 2. Update the version number in [`index.css`](src/index.css).
 3. Run: `npm version <update_type>` where `<update_type>` is one of the semantic versioning release types: **patch**, **minor**, or **major** (see [versioning](#versioning)).
 
-## The breakdown of step 3
+### The breakdown of step 3
 
 1. Run the `build` script.
 2. Add `CHANGELOG.md` and `index.css` modified in **steps 1** and **2** to the version commit.
