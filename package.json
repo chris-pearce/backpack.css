@@ -1,7 +1,7 @@
 {
   "name": "backpack.css",
   "main": "lib/backpack.css",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A lightweight and somewhat opinionated CSS foundation that is best suited to applications 🎒.",
   "keywords": [
     "css",
