@@ -1,0 +1,10 @@
+# Folders and files
+node_modules/
+lib/
+npm-debug.log
+yarn-error.log
+
+# Dot files
+.cache
+.DS_Store
+.vscode

@@ -1,0 +1,42 @@
+/**
+ * Indicates that a label will shift focus to its associated control.
+ */
+
+label[for] {
+  cursor: pointer;
+}
+
+/**
+ * Prevents an unwanted focus outline from appearing around elements that might
+ * still respond to pointer events.
+ *
+ * NOTE: it's okay to use `!important` here as we're doing it preemptively,
+ * i.e., we always want this rule to take precedence.
+ */
+
+[tabindex='-1']:focus {
+  outline: none !important;
+}
+
+/**
+ * Avoid 300ms click delay on touch devices that support the `touch-action` CSS
+ * property.
+ *
+ * ✌︎ Resources and credit
+ * http://caniuse.com/#feat=css-touch-action
+ * http://patrickhlauke.github.io/touch/tests/results/#suppressing-300ms-delay
+ * https://adactio.com/journal/10019
+ * https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away
+ */
+
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex]:not([tabindex='-1']) {
+  touch-action: manipulation;
+}

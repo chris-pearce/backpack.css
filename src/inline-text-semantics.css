@@ -1,0 +1,24 @@
+/*
+ * Nicer underlines for text links.
+ */
+
+a {
+  text-decoration-skip: ink;
+}
+
+/*
+ * It's more common for `<em>`s to not to be italic.
+ */
+
+em {
+  font-style: normal;
+}
+
+/*
+ * Override normalize.css's '80%'' font size to be '100%'' as it's rare that we
+ * want a `<small>` element's font size to be 'small'.
+ */
+
+small {
+  font-size: 100%;
+}
