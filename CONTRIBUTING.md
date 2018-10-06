@@ -112,7 +112,7 @@ Follow this process if you'd like your work considered for inclusion in the proj
    git push origin <topic-branch-name>
    ```
 
-7. [Open a Pull Request](https://help.github.com/articles/using-pull-requests/) with a clear title and description. If your Pull Request corresponds to an issue then please make the title the same as the issue title and somewhere in the description, include this: _**This fixes #`<x>`**_, where `<x>` is the issue number (GitHub will offer an auto-complete menu when you type '#').
+7. [Open a Pull Request](https://help.github.com/articles/using-pull-requests/) with a clear title and description. If your Pull Request corresponds to an issue then please make the title the same as the issue title and somewhere in the description include this: _**This fixes #`<x>`**_, where `<x>` is the issue number, also add the relevant issue [label(s)](#labels).
 
 **✋ IMPORTANT:** by submitting a patch, you agree to allow the project owner to license your work under the same license that used by the project.
 
