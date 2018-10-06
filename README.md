@@ -13,8 +13,6 @@ A lightweight and somewhat opinionated CSS foundation that is best suited to app
 - [What it does](#what-it-does)
 - [Evolution](#evolution)
 - [Browser support](#browser-support)
-- [Publishing](#publishing)
-  - [The breakdown of step 3](#the-breakdown-of-step-3)
 - [Contributing](#contributing)
 - [Versioning](#versioning)
 
@@ -60,7 +58,15 @@ The order at which you import each module is important, to see this order and wh
 
 ### Importing without a bundler
 
-CDN version coming soon, [see](https://github.com/chris-pearce/backpack.css/issues/15). In the meantime you can link to the hosted version on [UNPKG](https://unpkg.com) via a `<link>` element in your HTML Head, however, make sure it comes before your project's CSS.
+CDN version coming soon, [see](https://github.com/chris-pearce/backpack.css/issues/15). In the meantime you can link to the hosted version on [UNPKG](https://unpkg.com) via a `<link>` element in your HTML Head, however, make sure it comes before your project's CSS, e.g.:
+
+```html
+<head>
+  […]
+  <link rel="stylesheet" href="https://unpkg.com/backpack.css">
+  <link rel="stylesheet" href="[path-to-your-project-css]">
+</head>
+```
 
 ### Overriding
 
@@ -76,22 +82,25 @@ html {
 
 ## Motivation
 
-Nowadays I'm building [React](https://reactjs.org/) applications that have highly componentised User Interfaces (UI) making use of native CSS layout mechanisms such as [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) and [Grid](https://css-tricks.com/snippets/css/complete-guide-grid/). I'm no longer finding the need for heavy handed CSS frameworks that handle most of my UI concerns, especially layout. Instead I build components with a smidgen of global styles.
+Nowadays I'm building [React](https://reactjs.org/) applications that have highly componentised User Interfaces (UI) making use of native CSS layout mechanisms such as [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) and [Grid](https://css-tricks.com/snippets/css/complete-guide-grid/). I'm no longer finding the need for heavy handed CSS frameworks that handle most of my UI concerns, especially layout and utilities. Instead I build components with a smidgen of global styles.
 
-What I do need, however, are a bunch of smart and sensible foundational styles suited for applications that I would typically forget project to project—think [Normalize.css](http://necolas.github.io/normalize.css/) and then some. Something that is lightweight, super easy to intergrate, and can easily be overriden or allow for modular use, thus giving birth to backpack.css 🙂.
+What I do need, however, are a bunch of smart and sensible foundational styles suited for applications that I would typically forget project to project—think [Normalize.css](http://necolas.github.io/normalize.css/) and then some. Something that is lightweight, super easy to intergrate, and can easily be overriden or allow for modular use, thus giving birth to backpack.css 🙂🎒.
 
 ## What it does
 
-- Removes margins, paddings, and borders from all elements except `<input>` so that everything is on an even playing field.
-- Applies sensible form element resets and normalisations, e.g.: _remove all user-agent styles from buttons_.
-- Makes all images responsive.
+- Applies sensible form element resets, normalisations, and fixes, e.g.: _remove all user-agent styles from buttons_.
 - Applies sensible interactive styles, e.g.: _avoid 300ms click delay on touch devices_.
 - Applies foundational print styles.
-- Applies the nicer `border-box` value to all elements.
-- Removes list bullets.
+- Applies the nicer `border-box` value for the `box-sizing` property to all elements.
 - Applies sensible OpenType features, e.g.: _enables lining numerals, tabular numerals, and slashed zero, for table content_.
+- Makes all images responsive.
+- Removes margins, paddings, and borders from all elements except `<input>` so that everything is on an even playing field.
+- Removes list bullets.
+- Removes all user-agent styles from heading elements and resets them to have the same styles as the body copy.
 
 _And more…_
+
+All of the CSS is very well documentated if you want to dig deeper.
 
 ## Evolution
 
@@ -106,39 +115,20 @@ This is the third CSS framework/library I've created. Looking at each one lets y
 - Chrome
 - Edge
 - Firefox
-- Internet Explorer 11
-- Safari 8+
+- Internet Explorer 11 _(partial)_
+- Safari 10+
 - Opera
 
 Not everything will work in Internet Explorer 11, e.g.: the [`system-ui`](https://caniuse.com/#feat=font-family-system-uiZ) font, however, anything that doesn't work will simply degrade gracefully.
 
-It's recommended to have [Autoprefixer](https://github.com/postcss/autoprefixer) setup as part of your projects build.
-
-## Publishing
-
-Once new changes have been merged do the following:
-
-1. Add all new changes to [`CHANGELOG.md`](CHANGELOG.md) making sure to follow the existing format.
-2. Update the version number in [`index.css`](src/index.css).
-3. Run: `npm version <update_type> --force` where `<update_type>` is one of the semantic versioning release types: **patch**, **minor**, or **major** (see [versioning](#versioning)).
-
-### The breakdown of step 3
-
-1. Run the `build` script.
-2. Add `CHANGELOG.md` and `index.css` modified in **steps 1** and **2** to the version commit.
-3. Change the version number in [`package.json`](package.json).
-4. Push the new version commit and tag up to the repository.
-5. Clean the `lib` directory.
-6. Publish the new version to the NPM registry.
-
-_Each step will only run if the one before it passed._
+It's recommended to have [Autoprefixer](https://github.com/postcss/autoprefixer) setup as part of your project's build.
 
 ## Contributing
 
-_`CONTRIBUTING.MD` coming soon, [see](https://github.com/chris-pearce/backpack.css/issues/10)._
+Please see our [contributing guidelines](CONTRIBUTING.md).
 
 ## Versioning
 
 backpack.css is maintained under the [Semantic Versioning guidelines](http://semver.org/). We'll do our best to adhere to those guidelines and strive to maintain backwards compatibility.
 
-See the [CHANGELOG](CHANGELOG.md).
+See the [change log](CHANGELOG.md).
