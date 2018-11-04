@@ -1,3 +1,10 @@
+[![NPM
+version](https://img.shields.io/npm/v/backpack.css.svg?longCache=true&style=popout-square)](https://www.npmjs.com/package/backpack.css) [![GitHub
+license](https://img.shields.io/github/license/chris-pearce/backpack.css.svg?longCache=true&style=popout-square)](https://github.com/chris-pearce/backpack.css/blob/master/LICENSE) [![Dependencies](https://img.shields.io/david/chris-pearce/backpack.css.svg?longCache=true&style=popout-square)](https://david-dm.org/chris-pearce/backpack.css) [![Dev
+dependencies](https://img.shields.io/david/dev/chris-pearce/backpack.css.svg?longCache=true&style=popout-square)](https://david-dm.org/chris-pearce/backpack.css?type=dev) [![Code of
+conduct](https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?longCache=true&style=popout-square)](https://github.com/chris-pearce/backpack.css/blob/master/CODE_OF_CONDUCT.md) [![PRs
+Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![Downloads](https://img.shields.io/npm/dw/backpack.css.svg?longCache=true&style=popout-square)](https://www.npmjs.com/package/backpack.css)
+
 # backpack.css 🎒 <!-- omit in toc -->
 
 A lightweight and somewhat opinionated CSS foundation that is best suited to applications.
@@ -120,8 +127,7 @@ What I do need, however, are a bunch of smart and sensible foundational styles s
 - Makes all images and videos responsive.
 - Removes margins, paddings, and borders from all elements except `<input>` so that everything is on an even playing field.
 - Removes list bullets.
-- Removes all user-agent styles from heading elements and resets them to have the same styles as the body copy.
-- Removes the "focus ring" for mouse users.
+- Removes all user-agent styles from heading elements and resets them to have the same styles as the body copy. This article: [Handling headings in a UI component library](https://medium.com/fed-or-dead/handling-headings-in-a-ui-component-library-2587de93c890) goes into more detail on this.
 
 _And more…_
 
