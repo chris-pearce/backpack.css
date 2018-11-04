@@ -1,0 +1,910 @@
+/*! backpack.css v2.0.0 | MIT License | github.com/chris-pearce/backpack.css */
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}
+
+/*
+ * Apply the nicer `border-box` value to make life easier when sizing elements.
+ */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/*
+ * Remove margins, paddings, and borders from all elements except `<input>` so
+ * that everything is on an even playing field.
+ */
+
+*:not(input) {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Prevents an unwanted focus outline from appearing around elements that might
+ * still respond to pointer events.
+ *
+ * NOTE: It's okay to use `!important` here as we're doing it preemptively,
+ * i.e., we always want this rule to take precedence.
+ */
+
+/* stylelint-disable-next-line a11y/no-outline-none */
+
+[tabindex='-1']:focus {
+  outline: none !important;
+}
+
+/**
+ * Removes the outline in cases where the UA determines via heuristics that the
+ * focus should not be visible. This is mainly for ensuring that a focus
+ * indicator (a "focus ring") does not render for mouse users.
+ */
+
+/* stylelint-disable-next-line a11y/no-outline-none */
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/**
+ * Removes any animations or transitions for users who have notified their
+ * system that they prefer an interface that minimises the amount of movement or
+ * animation. Preferably to the point where all non-essential movement is
+ * removed.
+ *
+ * NOTE: It's okay to use `!important` here as we're doing it pre-emptively,
+ * i.e., we always want these rules to take precedence.
+ */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+
+/**
+ * Print styles.
+ */
+
+@media print {
+  /**
+   * 1. Remove styles that are poor for printing.
+   * 2. Black prints faster.
+   *
+   * NOTE: It's okay to use `!important` here as we're doing it pre-emptively,
+   * i.e., we always want these rules to take precedence.
+   */
+
+  *,
+  *::after,
+  *::before {
+    background: transparent !important; /* 1 */
+    box-shadow: none !important; /* 1 */
+    color: black !important; /* 2 */
+    text-shadow: none !important; /* 1 */
+  }
+}
+
+/**
+ * Set a more readable tab size.
+ *
+ * ✌︎ Credit https://github.com/sindresorhus/modern-normalize/issues/17
+ */
+
+:root {
+  -moz-tab-size: 4;
+       tab-size: 4;
+}
+
+/**
+ * 1. Set the font family of the entire document to use a system font.
+ *    ✌︎ Resources and credit
+ *    https://github.com/sindresorhus/modern-normalize/issues/3
+ *    https://github.com/primer/primer/pull/408
+ *    https://infinnie.github.io/blog/2017/systemui.html
+ *    http://markdotto.com/2018/02/07/github-system-fonts/
+ * 2. Set OpenType features for the entire document. Enable kerning,
+ *    common/standard ligatures, contextual ligatures, and proportional,
+ *    oldstyle numerals. NOTE: If any of the `font-feature-settings` values
+ *    aren't needed on child elements, e.g.: `<td>`, then you have to explicitly
+ *    turn them off. Also, see the "OpenType features" section in the README.md.
+ * 3. Set the font size of the entire document using the default user-agent size
+ *    which is typically 16px.
+ * 4. Increase the line height from normalize.css's small '1.15' value. The
+ *    larger '1.5' value is recommended by the W3C Web Accessibility Initiative.
+ */
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; /* 1 */
+  font-feature-settings: 'kern', 'liga', 'clig', 'calt', 'onum', 'pnum'; /* 2 */
+  -webkit-font-kerning: normal;
+          font-kerning: normal; /* 2 */
+  font-size: 1rem; /* 3 */
+  font-variant-ligatures: common-ligatures contextual; /* 2 */
+  font-variant-numeric: oldstyle-nums proportional-nums; /* 2 */
+  line-height: 1.5; /* 4 */
+}
+
+/**
+ * Indicates that a label will shift focus to its associated control.
+ */
+
+label[for] {
+  cursor: pointer;
+}
+
+/*
+ * Override normalize.css's opinionated styles, `line-height` is set to 'normal'
+ * as that's what most user-agents use. See:
+ * https://github.com/necolas/normalize.css/issues/694.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  line-height: normal;
+}
+
+/*
+ * 1. Remove noticeable visual user-agent styles so we have a clean slate.
+ * 2. Remove rounded corners that iOS applies to all `<input>` buttons.
+ * 3. Buttons shouldn't have a pointer cursor as explained in this article:
+ *    https://medium.com/simple-human/buttons-shouldnt-have-a-hand-cursor-b11e99ca374b.
+ *    But due to this incorrect pattern being ubiqitous on the Web it makes
+ *    sense to apply it.
+ */
+
+[type='submit'],
+[type='button'],
+[type='reset'],
+button {
+  background: transparent; /* 1 */
+  border: 0; /* 1 */
+  border-radius: 0; /* 2 */
+  cursor: pointer; /* 3 */
+  margin: 0; /* 1 */
+  padding: 0; /* 1 */
+}
+
+/*
+ * Restore the correct `cursor` for disabled buttons.
+ */
+
+[type='submit']:disabled,
+[type='button']:disabled,
+[type='reset']:disabled,
+button:disabled {
+  cursor: default;
+}
+
+/*
+ * 1. Remove top inner shadow that iOS applies to all textual inputs.
+ *    ✌︎ Credit https://davidwalsh.name/input-shadows-ipad
+ * 2. Remove padding (mostly 1px) that most user-agents apply to all textual
+ *    inputs.
+ */
+
+[type='date'],
+[type='datetime-local'],
+[type='email'],
+[type='month'],
+[type='number'],
+[type='password'],
+[type='search'],
+[type='tel'],
+[type='text'],
+[type='time'],
+[type='url'],
+[type='week'] {
+  background-clip: padding-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Set OpenType features for specific input types, mostly numeric. Remove
+ * kerning and proportional, oldstyle numerals. Enable lining numerals.
+ *
+ * NOTE: See the "OpenType features" section in the README.md.
+ */
+
+[type='color'],
+[type='date'],
+[type='datetime-local'],
+[type='month'],
+[type='number'],
+[type='range'],
+[type='tel'],
+[type='time'],
+[type='week'] {
+  font-feature-settings: 'kern' 0, 'onum' 0, 'lnum';
+  -webkit-font-kerning: none;
+          font-kerning: none;
+  font-variant-numeric: lining-nums;
+}
+
+/*
+ * Disable horizontal resizing.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/**
+ * Override a `<fieldset>`s default `min-width: min-content;` with the more
+ * standard `min-width: 0;` so it renders as a block element would.
+ *
+ * ✌︎ Credit https://thatemil.com/blog/2015/01/03/reset-your-fieldset.
+ */
+
+fieldset {
+  min-width: 0;
+}
+
+body:not(:-moz-handler-blocked) fieldset {
+  display: table-cell;
+}
+
+/**
+ * Remove the clear field button (an "X" icon) and the reveal password button
+ * (an "eye" icon) that is generated by IE 10+ for textual inputs. See:
+ * http://stackoverflow.com/a/21869433/1116204.
+ */
+
+::-ms-clear,
+::-ms-reveal {
+  display: none;
+}
+
+/**
+ * Un-style the caret for `<select>` lists in IE 10+.
+ */
+
+::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+
+/**
+ * Fixes a bug in Safari Mobile 7.0+ where click events aren't fired on elements
+ * that aren't typißcally interactive. See:
+ * https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile.
+ */
+
+[role='button'] {
+  cursor: pointer;
+}
+
+/**
+ * We scope our heading styles to classes instead of the `<hx>` element selector
+ * so our styles are not tied to their semantics, i.e., if you want a `<h4>` to
+ * look like a `<h2>` you can easily do this. All of the heading elements are
+ * reset to have the same styles as the body copy. See:
+ * https://medium.com/fed-or-dead/handling-headings-in-a-ui-component-library-2587de93c890
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+  line-height: inherit;
+}
+
+/**
+ * Print styles.
+ */
+
+@media print {
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+/*
+ * It's more common for `<em>`s to not to be italic.
+ */
+
+em {
+  font-style: normal;
+}
+
+/*
+ * Override normalize.css's '80%'' font size to be '100%'' as it's rare that we
+ * want a `<small>` element's font size to be 'small'.
+ */
+
+small {
+  font-size: 100%;
+}
+
+/**
+ * normalize.css normalizes the `<sub>` and `<sup>` elements, however, if
+ * user-agents support the `font-variant-position` property then we use that
+ * instead and remove the relevant normalize.css styles.
+ */
+
+@supports (font-variant-position: sub) and (font-variant-position: super) {
+  sub,
+  sup {
+    font-size: 100%;
+    line-height: inherit;
+    position: static;
+  }
+
+  sub {
+    font-variant-position: sub;
+  }
+
+  sup {
+    font-variant-position: super;
+  }
+}
+
+/**
+ * Print styles.
+ */
+
+@media print {
+  /**
+   * Make links always stand out.
+   */
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  /**
+   * Show the `[href]` and `[title]` attribute values of links and abbreviations
+   * via their `::after` pseudo element.
+   */
+
+  /* stylelint-disable-next-line a11y/content-property-no-static-value */
+  a[href]::after {
+    content: ' (' attr(href) ')';
+  }
+
+  /* stylelint-disable-next-line a11y/content-property-no-static-value */
+  abbr[title]::after {
+    content: ' (' attr(title) ')';
+  }
+
+  /**
+   * Don't show links that are fragment identifiers or use the `javascript:`
+   * pseudo protocol.
+   */
+
+  a[href^='javascript:']::after,
+  a[href^='#']::after {
+    content: '';
+  }
+}
+
+/*
+ * In applications lists are ubiquitous and it's extremely rare they're used in
+ * long form content therefore it makes sense to strip away their bullets in
+ * addition to removing their default margin and padding (see: Resets).
+ */
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+/**
+ * Print styles.
+ */
+
+@media print {
+  /**
+   * NOTE: It's okay to use `!important` here as we're doing it pre-emptively,
+   * i.e., we always want these rules to take precedence.
+   */
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+}
+
+/**
+ * Make all images and videos responsive.
+ *
+ * 1. Override the height to 'auto', otherwise images will be stretched when
+ *    setting a width and height attribute on the `<img>` element.
+ * 2. Set a maximum relative to the parent.
+ */
+
+img,
+video {
+  height: auto; /* 1 */
+  max-width: 100%; /* 2 */
+}
+
+/*
+ * Prevent table cell borders from doubling up.
+ */
+
+table {
+  border-collapse: collapse;
+}
+
+/**
+ * Set OpenType features. Remove proportional and oldstyle numerals. Enable
+ * lining numerals, tabular numerals, and slashed zero.
+ *
+ * NOTE: See the "OpenType features" section in the README.md.
+ */
+
+td {
+  font-feature-settings: 'onum' 0, 'pnum' 0, 'lnum', 'tnum', 'zero';
+  font-variant-numeric: lining-nums tabular-nums slashed-zero;
+}
+
+/**
+ * Print styles.
+ */
+
+@media print {
+  /**
+   * Make the header row repeated at the top of each printed page.
+   *
+   * ✌︎ Credit http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+
+  thead {
+    display: table-header-group;
+  }
+}
+
+/**
+ * 1. Set the font family to use a monospace system font.
+ *    ✌︎ Credit https://github.com/sindresorhus/modern-normalize
+ * 2. Set OpenType features. Remove kerning and common/standard ligatures.
+ *    Enable lining numerals, tabular numerals, and slashed zero.
+ *    NOTE: See the "OpenType features" section in the README.md.
+ */
+
+code,
+kbd,
+pre,
+samp {
+  font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier,
+    monospace; /* 1 */
+  font-feature-settings: 'kern' 0, 'liga' 0, 'clig' 0, 'onum' 0, 'pnum' 0,
+    'tnum', 'lnum', 'zero'; /* 2 */
+  -webkit-font-kerning: none;
+          font-kerning: none; /* 2 */
+  font-variant-ligatures: contextual; /* 2 */
+  font-variant-numeric: lining-nums tabular-nums slashed-zero; /* 2 */
+}
+
+/*
+ * Remove the gap between the following elements and the bottom of their
+ * containers.
+ *
+ * ✌︎ Resources and credit
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ * https://github.com/h5bp/html5-boilerplate
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/**
+ * Avoid 300ms click delay on touch devices that support the `touch-action` CSS
+ * property.
+ *
+ * ✌︎ Resources and credit
+ * http://caniuse.com/#feat=css-touch-action
+ * http://patrickhlauke.github.io/touch/tests/results/#suppressing-300ms-delay
+ * https://adactio.com/journal/10019
+ * https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away
+ */
+
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex]:not([tabindex='-1']) {
+  touch-action: manipulation;
+}
+
+/**
+ * Print styles.
+ */
+
+@media print {
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+}
