@@ -1,5 +1,11 @@
 # Changes to backpack.css 🎒
 
+## 1.2.0 (November 5, 2018)
+
+- Add a JS module export.
+- Add ESLint.
+- Add a Prettier ignore file.
+
 ## 1.1.0 (October 6, 2018)
 
 - Add contributing guidelines (see [`CONTRIBUTING.md`](CONTRIBUTING.md)).
