@@ -1,5 +1,11 @@
 # Changes to backpack.css 🎒
 
+## 1.3.0 (November 6, 2018)
+
+- Remove JS module export for now.
+- Add missing CSS to package (`inline-text-semantics.css`).
+- Bump dependencies.
+
 ## 1.2.0 (November 5, 2018)
 
 - Add a JS module export.
