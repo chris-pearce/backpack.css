@@ -120,9 +120,10 @@ Follow this process if you'd like your work considered for inclusion in the proj
 
 If you have permission to publish a new version apply the following steps, always on the `master` branch:
 
-1. Add all new changes to [`CHANGELOG.md`](CHANGELOG.md) making sure to follow the existing format.
-2. Update the version number in [`index.css`](src/index.css).
-3. Run: `npm version <update-type> --force` where `<update-type>` is one of the semantic versioning release types: **patch**, **minor**, or **major** (see the README's [Versioning](README.md#versioning) section).
+1. Commit all your changes.
+2. Add all new changes to [`CHANGELOG.md`](CHANGELOG.md) making sure to follow the existing format.
+3. Update the version number in [`index.css`](src/index.css).
+4. Run: `npm version <update-type> --force` where `<update-type>` is one of the semantic versioning release types: **patch**, **minor**, or **major** (see the README's [Versioning](README.md#versioning) section).
 
 ### Step 3 breakdown
 
