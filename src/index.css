@@ -12,12 +12,13 @@
  * 3.  Main root †
  * 4.  Forms †
  * 5.  Content sectioning †
- * 6.  Text content †
- * 7.  Image and multimedia †
- * 8.  Table content †
- * 9.  Typography
- * 10. Interactive
- * 11. Print
+ * 6.  Inline text semantics †
+ * 7.  Text content †
+ * 8.  Image and multimedia †
+ * 9.  Table content †
+ * 10. Typography
+ * 11. Interactive
+ * 12. Print
  *
  * ‡ Comes from 'node_modules'.
  * † Section names come from MDN's HTML elements reference document. See:
@@ -29,6 +30,7 @@
 @import 'main-root.css';
 @import 'forms.css';
 @import 'content-sectioning.css';
+@import 'inline-text-semantics.css';
 @import 'text-content.css';
 @import 'image-and-multimedia.css';
 @import 'table-content.css';
