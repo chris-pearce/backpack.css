@@ -1,12 +1,4 @@
 /*
- * Nicer underlines for text links.
- */
-
-a {
-  text-decoration-skip: ink;
-}
-
-/*
  * It's more common for `<em>`s to not to be italic.
  */
 
