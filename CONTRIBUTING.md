@@ -17,7 +17,7 @@ This project has a [code of conduct](CODE_OF_CONDUCT.md) that all contributors a
 - [Pull requests](#pull-requests)
   - [Process](#process)
 - [Publishing](#publishing)
-  - [Step 3 breakdown](#step-3-breakdown)
+  - [Step 4 breakdown](#step-4-breakdown)
 - [CSS style guide](#css-style-guide)
 
 ## Issue tracker
@@ -125,7 +125,7 @@ If you have permission to publish a new version apply the following steps, alway
 3. Update the version number in [`index.css`](src/index.css).
 4. Run: `npm version <update-type> --force` where `<update-type>` is one of the semantic versioning release types: **patch**, **minor**, or **major** (see the README's [Versioning](README.md#versioning) section).
 
-### Step 3 breakdown
+### Step 4 breakdown
 
 1. Run the `build` script.
 2. Add `CHANGELOG.md` and `index.css` that got modified in steps **1** and **2** to the version commit.
