@@ -40,3 +40,13 @@ textarea,
 [tabindex]:not([tabindex='-1']) {
   touch-action: manipulation;
 }
+
+/**
+ * Removes the outline in cases where the UA determines via heuristics that the
+ * focus should not be visible. This is mainly for ensuring that a focus
+ * indicator (a "focus ring") does not render for mouse users.
+ */
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
