@@ -50,3 +50,20 @@ textarea,
 :focus:not(:focus-visible) {
   outline: none;
 }
+
+/**
+ * Removes any animations or transitions for users who have notified their
+ * system that they prefer an interface that minimises the amount of movement or
+ * animation. Preferably to the point where all non-essential movement is
+ * removed.
+ *
+ * NOTE: it's okay to use `!important` here as we're doing it pre-emptively,
+ * i.e., we always want these rules to take precedence.
+ */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
