@@ -93,10 +93,11 @@ What I do need, however, are a bunch of smart and sensible foundational styles s
 - Applies foundational print styles.
 - Applies the nicer `border-box` value for the `box-sizing` property to all elements.
 - Applies sensible OpenType features, e.g.: _enables lining numerals, tabular numerals, and slashed zero, for table content_.
-- Makes all images responsive.
+- Makes all images and videos responsive.
 - Removes margins, paddings, and borders from all elements except `<input>` so that everything is on an even playing field.
 - Removes list bullets.
 - Removes all user-agent styles from heading elements and resets them to have the same styles as the body copy.
+- Removes the "focus ring" for mouse users.
 
 _And more…_
 
@@ -121,7 +122,7 @@ This is the third CSS framework/library I've created. Looking at each one lets y
 
 Not everything will work in Internet Explorer 11, e.g.: the [`system-ui`](https://caniuse.com/#feat=font-family-system-uiZ) font, however, anything that doesn't work will simply degrade gracefully.
 
-It's recommended to have [Autoprefixer](https://github.com/postcss/autoprefixer) setup as part of your project's build.
+It's recommended to have [Autoprefixer](https://github.com/postcss/autoprefixer) set up as part of your project's build.
 
 ## Contributing
 
