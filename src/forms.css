@@ -1,3 +1,11 @@
+/**
+ * Indicates that a label will shift focus to its associated control.
+ */
+
+label[for] {
+  cursor: pointer;
+}
+
 /*
  * Override normalize.css's opinionated styles, `line-height` is set to 'normal'
  * as that's what most user-agents use. See:
@@ -31,6 +39,17 @@ button {
   cursor: pointer; /* 3 */
   margin: 0; /* 1 */
   padding: 0; /* 1 */
+}
+
+/*
+ * Restore the correct `cursor` for disabled buttons.
+ */
+
+[type='submit']:disabled,
+[type='button']:disabled,
+[type='reset']:disabled,
+button:disabled {
+  cursor: default;
 }
 
 /*

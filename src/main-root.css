@@ -1,8 +1,29 @@
 /**
- * 1. Set the font family of the entire document to use 'system-ui'.
- * 2. Set the font size of the entire document using the default user-agent
- *    size, which is typically 16px.
- * 3. Increase the line height from normalize.css's small '1.15' value. The
+ * Set a more readable tab size.
+ *
+ * ✌︎ Credit https://github.com/sindresorhus/modern-normalize/issues/17
+ */
+
+:root {
+	tab-size: 4;
+}
+
+/**
+ * 1. Set the font family of the entire document to use a system font.
+ *    ✌︎ Resources and credit
+ *    https://github.com/sindresorhus/modern-normalize/issues/3
+ *    https://github.com/primer/primer/pull/408
+ *    https://infinnie.github.io/blog/2017/systemui.html
+ *    http://markdotto.com/2018/02/07/github-system-fonts/
+ * 2. Set OpenType features for the entire document. Enable kerning,
+ *    common/standard ligatures, contextual ligatures, and proportional,
+ *    oldstyle numerals.
+ *    NOTE: if any of the `font-feature-settings` values aren't needed on child
+ *    elements, e.g.: `<td>`, then you have to explicitly turn them off. Also,
+ *    see the "OpenType features" section in the README.md.
+ * 3. Set the font size of the entire document using the default user-agent size
+ *    which is typically 16px.
+ * 4. Increase the line height from normalize.css's small '1.15' value. The
  *    larger '1.5' value is recommended by the W3C Web Accessibility Initiative.
  */
 
