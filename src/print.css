@@ -117,12 +117,4 @@
     orphans: 3;
     widows: 3;
   }
-
-  /**
-   * Apply bottom margin to all paragraphs.
-   */
-
-  p:not(:last-child) {
-    margin-bottom: 1.5rem !important;
-  }
 }
