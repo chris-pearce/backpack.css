@@ -16,13 +16,8 @@ Following these guidelines helps to communicate that you respect the time of the
   - [Process](#process)
 - [Publishing](#publishing)
   - [Step 4 breakdown](#step-4-breakdown)
-- [Linting](#linting)
-  - [Tooling](#tooling)
-  - [Text editor setup](#text-editor-setup)
-  - [Precommit hook](#precommit-hook)
-  - [`yarn lint`](#yarn-lint)
-  - [Main rules](#main-rules)
-- [Code of conduct](#code-of-conduct)
+- [File structure](#file-structure)
+- [CSS style guide](#css-style-guide)
 
 ## Issue tracker
 
@@ -149,47 +144,22 @@ If you have permission to publish a new version apply the following steps:
 
 _Each step will only run if the one before it passed._
 
-## Linting
+## File structure
 
-### Tooling
+The source files are grouped by function using the groups defined in MDN's **[HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)** document.
 
-backpack.css uses these tools to report and apply its linting rules:
+This makes it easier to find what you're looking for especially when this grouping is commonly used amongst other similar CSS libraries.
 
-- [stylelint.io](stylelint.io)
-- [Prettier](https://prettier.io/)
-- [EditorConfig](https://editorconfig.org/)
-- [lint-staged](https://github.com/okonet/lint-staged) and [husky](https://github.com/typicode/husky)
+There are two groups (files) that are outside of the **HTML elements reference** grouping, these are:
 
-### Text editor setup
+- **[`global.css`](src/global.css)** _which has two usages:_
+  1. For styles that are applied to everything typically via the universal selector (`*`).
+  2. For styles that might not be truly global but are still considered "global" enough due to the type of selectors they use, e.g.: `[tabindex='-1']:focus`. Plus, these styles don't fit into any of the other groups.
+- **[`grouped.css`](src/grouped.css)** is for grouping selectors from two or more groups that share the same styles where by repeating the styles across multiple files would be detrimental to the maintainability of the library. In short, this file is to keep things DRY.
 
-Your text editor should be setup to work with this project's tooling.
+Please always stick to this structure.
 
-If you're using Visual Studio Code you'll be prompted to install the relevant [**Extensions**](https://code.visualstudio.com/docs/editor/extension-gallery) and the relevant [**Workspace Settings**](https://code.visualstudio.com/docs/getstarted/settings) will automatically be applied. If you're not using Visual Studio Code the stylelint.io site has an [Editor plugins](https://stylelint.io/user-guide/complementary-tools/#editor-plugins) section that may help.
-
-### Precommit hook
-
-A precommit hook will check for conformity and where applicable autofix any errors.
-
-### `yarn lint`
-
-Whenever you want to lint all of the source `.css` files you can run: `yarn lint`.
-
-### Main rules
-
-To see the full list of linting rules refer to [.stylelintrc.js](.stylelintrc.js) where it is structured the same, and linked to, the stylelint.io [Rules page](https://stylelint.io/user-guide/rules/). With that said here's a list of the main rules:
-
-- Hyphen-delimited naming applies for pretty much everything, e.g.:
-  - Filenames.
-- Rules are ordered alphabetically.
-- Please comment well sticking to the same format.
-- Line-length is 80 characters wide.
-- Please do not use `id` selectors.
-
-## Code of conduct
-
-Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
-
-To get the latest version of the [Contributor Covenant](https://www.contributor-covenant.org) code of conduct simply run:
+## CSS style guide
 
 ```bash
 npx covgen hello@cjpearce.com
