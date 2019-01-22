@@ -18,6 +18,7 @@ This project has a [code of conduct](CODE_OF_CONDUCT.md) that all contributors a
   - [Process](#process)
 - [Publishing](#publishing)
   - [Step 4 breakdown](#step-4-breakdown)
+- [File structure](#file-structure)
 - [CSS style guide](#css-style-guide)
 
 ## Issue tracker
@@ -135,6 +136,21 @@ If you have permission to publish a new version apply the following steps, alway
 6. Clean the `lib` directory.
 
 _Each step will only run if the one before it passed._
+
+## File structure
+
+The source files are grouped by function using the groups defined in MDN's **[HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)** document.
+
+This makes it easier to find what you're looking for especially when this grouping is commonly used amongst other similar CSS libraries.
+
+There are two groups (files) that are outside of the **HTML elements reference** grouping, these are:
+
+- **[`global.css`](src/global.css)** _which has two usages:_
+  1. For styles that are applied to everything typically via the universal selector (`*`).
+  2. For styles that might not be truly global but are still considered "global" enough due to the type of selectors they use, e.g.: `[tabindex='-1']:focus`. Plus, these styles don't fit into any of the other groups.
+- **[`grouped.css`](src/grouped.css)** is for grouping selectors from two or more groups that share the same styles where by repeating the styles across multiple files would be detrimental to the maintainability of the library. In short, this file is to keep things DRY.
+
+Please always stick to this structure.
 
 ## CSS style guide
 
