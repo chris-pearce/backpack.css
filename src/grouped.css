@@ -1,0 +1,78 @@
+/**
+ * 1. Set the font family to use a monospace system font.
+ *    ✌︎ Credit https://github.com/sindresorhus/modern-normalize
+ * 2. Set OpenType features. Remove kerning and common/standard ligatures.
+ *    Enable lining numerals, tabular numerals, and slashed zero.
+ *    NOTE: See the "OpenType features" section in the README.md.
+ */
+
+code,
+kbd,
+pre,
+samp {
+  font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace; /* 1 */
+  font-feature-settings: 'kern' 0, 'liga' 0, 'clig' 0, 'onum' 0, 'pnum' 0,
+    'tnum', 'lnum', 'zero'; /* 2 */
+  font-kerning: none; /* 2 */
+  font-variant-ligatures: contextual; /* 2 */
+  font-variant-numeric: lining-nums tabular-nums slashed-zero; /* 2 */
+}
+
+/*
+ * Remove the gap between the following elements and the bottom of their
+ * containers.
+ *
+ * ✌︎ Resources and credit
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ * https://github.com/h5bp/html5-boilerplate
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/**
+ * Avoid 300ms click delay on touch devices that support the `touch-action` CSS
+ * property.
+ *
+ * ✌︎ Resources and credit
+ * http://caniuse.com/#feat=css-touch-action
+ * http://patrickhlauke.github.io/touch/tests/results/#suppressing-300ms-delay
+ * https://adactio.com/journal/10019
+ * https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away
+ */
+
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex]:not([tabindex='-1']) {
+  touch-action: manipulation;
+}
+
+/**
+ * Print styles.
+ */
+
+@media print {
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+}
