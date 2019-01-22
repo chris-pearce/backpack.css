@@ -94,6 +94,8 @@ Simply link to backpack.css using a `<link>` element in your HTML Head, e.g.:
 </head>
 ```
 
+Or if you prefer to host backpack.css yourself simply visit the [UNPKG hosted version](https://unpkg.com/backpack.css) and do a "Save As" to your machine.
+
 ### Overriding
 
 backpack.css is just CSS so you can easily override any of its styles just as you would override any CSS, as in, via the rules of the cascade and specificity.
@@ -123,7 +125,7 @@ What I do need, however, are a bunch of smart and sensible foundational styles s
 - Applies foundational print styles.
 - Applies a system font including monospace fonts.
 - Applies the nicer `border-box` value for the `box-sizing` property to all elements.
-- Applies sensible OpenType features (see [OpenType features](#opentype-features) below).
+- Applies sensible OpenType features, e.g. _enables lining numerals, tabular numerals, and slashed zero, for table content_ (see [OpenType features](#opentype-features) below).
 - Makes all images and videos responsive.
 - Removes margins, paddings, and borders from all elements except `<input>` so that everything is on an even playing field.
 - Removes list bullets.
@@ -155,24 +157,16 @@ This is the third CSS framework/library I've created. Looking at each one lets y
 
 ## Browser support
 
-Here is the [Browserslist](https://github.com/browserslist/browserslist) query backpack.css uses:
+- Chrome _(latest 2)_
+- Edge _(latest 2)_
+- Firefox _(latest 2)_
+- Internet Explorer 11 _(partial)_
+- Safari _(latest 2)_
+- Opera _(latest 2)_
 
-```bash
-last 4 versions and > 0.5%,
-Firefox ESR,
-not ie < 11,
-not op_mini all,
-not dead
-```
+backpack.css is designed with progressive enhancement in mind so not everything will work in Internet Explorer 11 or even in every browser, e.g. the [`tab-size`](https://caniuse.com/#feat=font-family-system-uiZ) property set in [`main-root.css`](src/main-root.css).
 
-Which you can see [here](https://browserl.ist/?q=last+4+versions+and+%3E+0.5%25%2C+Firefox+ESR%2C+not+ie+%3C+11%2C+not+op_mini+all%2C+not+dead).
-
-Browserslist is used for [Autoprefixer](https://github.com/postcss/autoprefixer). Autoprefixer only adds a tiny amount of vendor prefixes, the main properties being prefixed are:
-
-- `font-feature-settings`
-- `font-variant-ligatures`
-
-_This doesn't mean that backpack.css cannot be used in browsers outside of the above Browserslist query, just that compatibility is ensured with the ones within the query._
+**✋ IMPORTANT:** [Autoprefixer](https://github.com/postcss/autoprefixer) should be set up as part of your project's build as backpack.css does not include any vendor prefixes.
 
 ## Contributing
 
