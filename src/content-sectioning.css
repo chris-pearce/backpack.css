@@ -16,3 +16,14 @@ h6 {
   font-weight: normal;
   line-height: inherit;
 }
+
+/**
+ * Print styles.
+ */
+
+@media print {
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

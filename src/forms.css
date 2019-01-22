@@ -1,3 +1,11 @@
+/**
+ * Indicates that a label will shift focus to its associated control.
+ */
+
+label[for] {
+  cursor: pointer;
+}
+
 /*
  * Override normalize.css's opinionated styles, `line-height` is set to 'normal'
  * as that's what most user-agents use. See:
@@ -45,8 +53,8 @@ button:disabled {
 }
 
 /*
- * 1. Remove top inner shadow that iOS applies to all textual inputs. ✌︎ Credit
- *    https://davidwalsh.name/input-shadows-ipad
+ * 1. Remove top inner shadow that iOS applies to all textual inputs.
+ *    ✌︎ Credit https://davidwalsh.name/input-shadows-ipad
  * 2. Remove padding (mostly 1px) that most user-agents apply to all textual
  *    inputs.
  */
@@ -65,6 +73,27 @@ button:disabled {
 [type='week'] {
   background-clip: padding-box; /* 1 */
   padding: 0; /* 2 */
+}
+
+/**
+ * Set OpenType features for specific input types, mostly numeric. Remove
+ * kerning and proportional, oldstyle numerals. Enable lining numerals.
+ *
+ * NOTE: See the "OpenType features" section in the README.md.
+ */
+
+[type='color'],
+[type='date'],
+[type='datetime-local'],
+[type='month'],
+[type='number'],
+[type='range'],
+[type='tel'],
+[type='time'],
+[type='week'] {
+  font-feature-settings: 'kern' 0, 'onum' 0, 'lnum';
+  font-kerning: none;
+  font-variant-numeric: lining-nums;
 }
 
 /*

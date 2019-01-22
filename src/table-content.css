@@ -5,3 +5,31 @@
 table {
   border-collapse: collapse;
 }
+
+/**
+ * Set OpenType features. Remove proportional and oldstyle numerals. Enable
+ * lining numerals, tabular numerals, and slashed zero.
+ *
+ * NOTE: See the "OpenType features" section in the README.md.
+ */
+
+td {
+  font-feature-settings: 'onum' 0, 'pnum' 0, 'lnum', 'tnum', 'zero';
+  font-variant-numeric: lining-nums tabular-nums slashed-zero;
+}
+
+/**
+ * Print styles.
+ */
+
+@media print {
+  /**
+   * Make the header row repeated at the top of each printed page.
+   *
+   * ✌︎ Credit http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+
+  thead {
+    display: table-header-group;
+  }
+}

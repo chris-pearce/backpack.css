@@ -8,3 +8,24 @@ ul,
 ol {
   list-style-type: none;
 }
+
+/**
+ * Print styles.
+ */
+
+@media print {
+  /**
+   * NOTE: it's okay to use `!important` here as we're doing it pre-emptively,
+   * i.e., we always want these rules to take precedence.
+   */
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+}

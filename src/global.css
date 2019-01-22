@@ -1,9 +1,26 @@
-/**
- * Indicates that a label will shift focus to its associated control.
+/*
+ * Remove margins, paddings, and borders from all elements except `<input>` so
+ * that everything is on an even playing field.
  */
 
-label[for] {
-  cursor: pointer;
+*:not(input) {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Apply the nicer `border-box` value to make life easier when sizing elements.
+ */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 /**
@@ -19,35 +36,12 @@ label[for] {
 }
 
 /**
- * Avoid 300ms click delay on touch devices that support the `touch-action` CSS
- * property.
- *
- * ✌︎ Resources and credit
- * http://caniuse.com/#feat=css-touch-action
- * http://patrickhlauke.github.io/touch/tests/results/#suppressing-300ms-delay
- * https://adactio.com/journal/10019
- * https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away
- */
-
-a,
-area,
-button,
-input,
-label,
-select,
-summary,
-textarea,
-[tabindex]:not([tabindex='-1']) {
-  touch-action: manipulation;
-}
-
-/**
  * Removes the outline in cases where the UA determines via heuristics that the
  * focus should not be visible. This is mainly for ensuring that a focus
  * indicator (a "focus ring") does not render for mouse users.
  */
 
-:focus:not(:focus-visible) {
+*:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -65,5 +59,28 @@ textarea,
   * {
     animation: none !important;
     transition: none !important;
+  }
+}
+
+/**
+ * Print styles.
+ */
+
+@media print {
+  /**
+   * 1. Remove styles that are poor for printing.
+   * 2. Black prints faster.
+   *
+   * NOTE: it's okay to use `!important` here as we're doing it pre-emptively,
+   * i.e., we always want these rules to take precedence.
+   */
+
+  *,
+  *::after,
+  *::before {
+    background: transparent !important; /* 1 */
+    box-shadow: none !important; /* 1 */
+    color: black !important; /* 2 */
+    text-shadow: none !important; /* 1 */
   }
 }

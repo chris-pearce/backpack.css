@@ -4,29 +4,8 @@
  * https://github.com/chris-pearce/backpack.css
  */
 
-/**
- * Contents
- *
- * 1.  normalize.css ‡
- * 2.  Resets
- * 3.  Main root †
- * 4.  Forms †
- * 5.  Content sectioning †
- * 6.  Inline text semantics †
- * 7.  Text content †
- * 8.  Image and multimedia †
- * 9.  Table content †
- * 10. Typography
- * 11. Interactive
- * 12. Print
- *
- * ‡ Comes from 'node_modules'.
- * † Section names come from MDN's HTML elements reference document. See:
- * https://developer.mozilla.org/en-US/docs/Web/HTML/Element.
- */
-
 @import 'normalize.css';
-@import 'resets.css';
+@import 'global.css';
 @import 'main-root.css';
 @import 'forms.css';
 @import 'content-sectioning.css';
@@ -34,6 +13,4 @@
 @import 'text-content.css';
 @import 'image-and-multimedia.css';
 @import 'table-content.css';
-@import 'typography.css';
-@import 'interactive.css';
-@import 'print.css';
+@import 'grouped.css';
