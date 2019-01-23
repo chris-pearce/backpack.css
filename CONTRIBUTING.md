@@ -80,10 +80,15 @@ Follow this process if you'd like your work considered for inclusion in the proj
    ```bash
    # Clone your fork of the repo into the current directory
    git clone https://github.com/<your-username>/backpack.css.git
+
    # Navigate to the newly cloned directory
    cd backpack.css
+
    # Assign the original repo to a remote called 'upstream'
    git remote add upstream https://github.com/chris-pearce/backpack.css.git
+
+   # Install dependencies
+   yarn install
    ```
 
 2. If you cloned a while ago, get the latest changes from upstream:
@@ -119,9 +124,9 @@ Follow this process if you'd like your work considered for inclusion in the proj
 
 ## Publishing
 
-If you have permission to publish a new version apply the following steps, always on the `master` branch:
+If you have permission to publish a new version apply the following steps:
 
-1. Commit all your changes.
+1. Make sure you are on the `master` branch with a clean git index.
 2. Add all new changes to [`CHANGELOG.md`](CHANGELOG.md) making sure to follow the existing format.
 3. Update the version number in [`index.css`](src/index.css).
 4. Run: `npm version <update-type> --force` where `<update-type>` is one of the semantic versioning release types: **patch**, **minor**, or **major** (see the README's [Versioning](README.md#versioning) section).

@@ -5,10 +5,16 @@ A lightweight and somewhat opinionated CSS foundation that is best suited to app
 ## Table of contents <!-- omit in toc -->
 
 - [Installation](#installation)
+  - [npm](#npm)
+  - [Download](#download)
+  - [CDN](#cdn)
 - [How to use](#how-to-use)
-  - [Importing with a bundler](#importing-with-a-bundler)
-  - [Importing without a bundler](#importing-without-a-bundler)
+  - [With a bundler (webpack)](#with-a-bundler-webpack)
+    - [JS](#js)
+    - [CSS](#css)
+  - [No bundler](#no-bundler)
   - [Overriding](#overriding)
+- [Bundle size](#bundle-size)
 - [Motivation](#motivation)
 - [What it does](#what-it-does)
   - [OpenType features](#opentype-features)
@@ -20,6 +26,8 @@ A lightweight and somewhat opinionated CSS foundation that is best suited to app
 - [License](#license)
 
 ## Installation
+
+### npm
 
 Run the following command using [npm](https://www.npmjs.com/):
 
@@ -33,35 +41,43 @@ If you prefer [Yarn](https://yarnpkg.com/en/), use this command instead:
 yarn add backpack.css --dev
 ```
 
-CDN version coming soon, [see](https://github.com/chris-pearce/backpack.css/issues/15).
+### Download
+
+- [Unminified](https://cdn.jsdelivr.net/npm/backpack.css/lib/backpack.css)
+- [Minified](https://cdn.jsdelivr.net/npm/backpack.css/lib/backpack.min.css)
+
+### CDN
+
+- [jsDelivr](https://www.jsdelivr.com/package/npm/backpack.css)
+- [unpkg](https://unpkg.com/backpack.css)
+
+_[cdnjs](https://cdnjs.com/) coming soon ([see here](https://github.com/cdnjs/cdnjs/issues/13224))._
 
 ## How to use
 
-Typically you'll be wanting to import all of backpack.css styles into your project but you do have the choice to be selective. The one strict rule is that it must come before your project's CSS to ensure correct ordering of your styles and to be able to override any of backpack.css styles.
+backpack.css is pretty easy to use. The one strict rule is that it **must** come before your project's CSS to ensure correct ordering of your styles and to be able to override any of backpack.css styles.
 
-### Importing with a bundler
+### With a bundler (webpack)
 
-If you're using a bundler such as [webpack](https://webpack.js.org/) and wanting to import all of backpack.css then your projects entry point should look like this:
+#### JS
 
 ```js
 import 'backpack.css';
 import '[path(s)-to-your-project-css]';
 ```
 
-If you want to be selective then simply `import` the backpack.css files you need, for example:
+#### CSS
 
-```js
-import 'backpack.css/lib/resets.css';
-import 'backpack.css/lib/content-sectioning.css';
-import 'backpack.css/lib/forms.css';
-import '[path(s)-to-your-project-css]';
+If you're using webpack then use the tilde (`~`) prefix at the start of the path (not sure what the convention is with other bundlers?), e.g.:
+
+```css
+@import '~backpack.css';
+@import '[path(s)-to-your-project-css]';
 ```
 
-The order at which you import each module is important, to see this order and what `.css` files are available refer to backpack.css [`index.css`](src/index.css).
+### No bundler
 
-### Importing without a bundler
-
-CDN version coming soon, [see](https://github.com/chris-pearce/backpack.css/issues/15). In the meantime you can link to the hosted version on [UNPKG](https://unpkg.com) via a `<link>` element in your HTML Head, however, make sure it comes before your project's CSS, e.g.:
+Simply link to backpack.css using a `<link>` element in your HTML Head, e.g.:
 
 ```html
 <head>
@@ -70,8 +86,6 @@ CDN version coming soon, [see](https://github.com/chris-pearce/backpack.css/issu
   <link rel="stylesheet" href="[path-to-your-project-css]" />
 </head>
 ```
-
-Or if you prefer to host backpack.css yourself simply visit the [UNPKG hosted version](https://unpkg.com/backpack.css) and do a "Save As" to your machine.
 
 ### Overriding
 
@@ -84,6 +98,10 @@ html {
   font-family: serif;
 }
 ```
+
+## Bundle size
+
+[![Bundle size minified](https://img.shields.io/bundlephobia/min/backpack.css.svg?longCache=true&style=popout-square)](https://bundlephobia.com/result?p=backpack.css) [![Bundle size minified](https://img.shields.io/bundlephobia/minzip/backpack.css.svg?longCache=true&style=popout-square)](https://bundlephobia.com/result?p=backpack.css)
 
 ## Motivation
 
@@ -98,7 +116,7 @@ What I do need, however, are a bunch of smart and sensible foundational styles s
 - Applies foundational print styles.
 - Applies a system font including monospace fonts.
 - Applies the nicer `border-box` value for the `box-sizing` property to all elements.
-- Applies sensible OpenType features, e.g. _enables lining numerals, tabular numerals, and slashed zero, for table content_ (see [OpenType features](#opentype-features) below).
+- Applies sensible OpenType features (see [OpenType features](#opentype-features) below).
 - Makes all images and videos responsive.
 - Removes margins, paddings, and borders from all elements except `<input>` so that everything is on an even playing field.
 - Removes list bullets.
