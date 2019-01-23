@@ -75,7 +75,7 @@ import '[path(s)-to-your-project-css]';
 
 #### CSS
 
-If you're using webpack then use the tilde (`~`) prefix at the start of the path, e.g.:
+If you're using webpack then use the tilde (`~`) prefix at the start of the path (not sure what the convention is with other bundlers?), e.g.:
 
 ```css
 @import '~backpack.css';
@@ -93,8 +93,6 @@ Simply link to backpack.css using a `<link>` element in your HTML Head, e.g.:
   <link rel="stylesheet" href="[path-to-your-project-css]" />
 </head>
 ```
-
-Or if you prefer to host backpack.css yourself simply visit the [UNPKG hosted version](https://unpkg.com/backpack.css) and do a "Save As" to your machine.
 
 ### Overriding
 
@@ -125,7 +123,7 @@ What I do need, however, are a bunch of smart and sensible foundational styles s
 - Applies foundational print styles.
 - Applies a system font including monospace fonts.
 - Applies the nicer `border-box` value for the `box-sizing` property to all elements.
-- Applies sensible OpenType features, e.g. _enables lining numerals, tabular numerals, and slashed zero, for table content_ (see [OpenType features](#opentype-features) below).
+- Applies sensible OpenType features (see [OpenType features](#opentype-features) below).
 - Makes all images and videos responsive.
 - Removes margins, paddings, and borders from all elements except `<input>` so that everything is on an even playing field.
 - Removes list bullets.
