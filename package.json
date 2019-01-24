@@ -14,27 +14,35 @@
     "lib"
   ],
   "scripts": {
-    "bundle": "postcss src/index.css -u postcss-import --no-map -o lib/backpack.css",
+    "autoprefix": "postcss lib/backpack.css --use autoprefixer --no-map --replace",
+    "bundle": "postcss src/index.css --use postcss-import --no-map --output lib/backpack.css",
     "clean": "rimraf lib",
-    "copy": "cp -r src/* lib && rm lib/index.css",
-    "build": "yarn bundle && yarn copy",
+    "build": "yarn bundle && yarn autoprefix",
     "prebuild": "yarn clean",
     "version": "npm run build && git add .",
     "postversion": "git push && git push --tags && npm publish && yarn clean"
   },
+  "browserslist": [
+    "last 4 versions and > 0.5%",
+    "Firefox ESR",
+    "not ie < 11",
+    "not op_mini all",
+    "not dead"
+  ],
   "repository": "git@github.com:chris-pearce/backpack.css.git",
   "author": "Chris Pearce <hello@cjpearce.com>",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^5.12.0",
+    "autoprefixer": "^9.4.6",
+    "eslint": "^5.12.1",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-config-prettier": "^3.5.0",
-    "eslint-plugin-import": "^2.14.0",
+    "eslint-config-prettier": "^3.6.0",
+    "eslint-plugin-import": "^2.15.0",
     "eslint-plugin-prettier": "^3.0.1",
     "normalize.css": "^8.0.1",
     "postcss-cli": "^6.1.1",
     "postcss-import": "^12.0.1",
-    "prettier": "^1.15.3",
+    "prettier": "^1.16.1",
     "rimraf": "^2.6.3"
   }
 }
