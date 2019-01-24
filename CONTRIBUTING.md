@@ -120,6 +120,8 @@ Follow this process if you'd like your work considered for inclusion in the proj
 
 7. [Open a Pull Request](https://help.github.com/articles/using-pull-requests/) with a clear title and description. If your Pull Request corresponds to an issue then please make the title the same as the issue title and somewhere in the description include this: _**This fixes #`<x>`**_, where `<x>` is the issue number, also add the relevant issue [label(s)](#labels).
 
+Tests will be added eventually for everything that can have a visual test ([see](https://github.com/chris-pearce/backpack.css/issues/20)), similar to [Normalize.css](https://github.com/necolas/normalize.css) [test file](https://github.com/necolas/normalize.css/blob/master/test.html). In the meantime there is the [html5-test-page.html](test/html5-test-page.html) page that can be used as a quick visual and cross-browser check.
+
 **✋ IMPORTANT:** by submitting a patch, you agree to allow the project owner to license your work under the same license that used by the project.
 
 ## Publishing
