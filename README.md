@@ -75,7 +75,7 @@ import '[path(s)-to-your-project-css]';
 
 #### CSS
 
-If you're using webpack then use the tilde (`~`) prefix at the start of the path (not sure what the convention is with other bundlers?), e.g.:
+If you're using webpack then use the tilde (`~`) prefix at the start of the path, e.g.:
 
 ```css
 @import '~backpack.css';
@@ -155,16 +155,24 @@ This is the third CSS framework/library I've created. Looking at each one lets y
 
 ## Browser support
 
-- Chrome _(latest 2)_
-- Edge _(latest 2)_
-- Firefox _(latest 2)_
-- Internet Explorer 11 _(partial)_
-- Safari _(latest 2)_
-- Opera _(latest 2)_
+Here is the [Browserslist](https://github.com/browserslist/browserslist) query backpack.css uses:
 
-backpack.css is designed with progressive enhancement in mind so not everything will work in Internet Explorer 11 or even in every browser, e.g. the [`tab-size`](https://caniuse.com/#feat=font-family-system-uiZ) property set in [`main-root.css`](src/main-root.css).
+```bash
+last 4 versions and > 0.5%,
+Firefox ESR,
+not ie < 11,
+not op_mini all,
+not dead
+```
 
-**✋ IMPORTANT:** [Autoprefixer](https://github.com/postcss/autoprefixer) should be set up as part of your project's build as backpack.css does not include any vendor prefixes.
+Which you can see [here](https://browserl.ist/?q=last+4+versions+and+%3E+0.5%25%2C+Firefox+ESR%2C+not+ie+%3C+11%2C+not+op_mini+all%2C+not+dead).
+
+Browserslist is used for [Autoprefixer](https://github.com/postcss/autoprefixer). Autoprefixer only adds a tiny amount of vendor prefixes, the main properties being prefixed are:
+
+- `font-feature-settings`
+- `font-variant-ligatures`
+
+_This doesn't mean that backpack.css cannot be used in browsers outside of the above Browserslist query, just that compatibility is ensured with the ones within the query._
 
 ## Contributing
 
