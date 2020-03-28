@@ -15,7 +15,6 @@
   "markdown.extension.toc.unorderedList.marker": "-",
   "postcss.validate": false,
   "prettier.eslintIntegration": true,
-  "prettier.proseWrap": "never",
   "prettier.stylelintIntegration": true,
   "rewrap.wrappingColumn": 80,
   "scss.validate": false

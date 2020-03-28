@@ -1,10 +1,22 @@
+const regExes = {
+  kebabCase: '^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
+};
+
 module.exports = {
-  plugins: ['stylelint-order', 'stylelint-high-performance-animation'],
+  extends: ['stylelint-prettier/recommended'],
+  plugins: [
+    'stylelint-a11y',
+    'stylelint-csstree-validator',
+    'stylelint-declaration-block-no-ignored-properties',
+    'stylelint-order',
+    'stylelint-high-performance-animation',
+  ],
   rules: {
     /**
      * Possible errors.
      * https://stylelint.io/user-guide/rules/#possible-errors
      */
+
     // Color
     'color-no-invalid-hex': true,
 
@@ -13,6 +25,7 @@ module.exports = {
     'font-family-no-missing-generic-family-keyword': true,
 
     // Function
+    'function-calc-no-invalid': true,
     'function-calc-no-unspaced-operator': true,
     'function-linear-gradient-no-nonstandard-direction': true,
 
@@ -31,7 +44,7 @@ module.exports = {
     // Declaration block
     'declaration-block-no-duplicate-properties': [
       true,
-      { ignore: ['consecutive-duplicates'] },
+      { ignore: ['consecutive-duplicates-with-different-values'] },
     ],
     'declaration-block-no-shorthand-property-overrides': true,
 
@@ -77,126 +90,116 @@ module.exports = {
     'function-whitelist': null,
 
     // Keyframes
-    'keyframes-name-pattern': null,
+    'keyframes-name-pattern': regExes.kebabCase,
 
-    'at-rule-blacklist': null,
-    'at-rule-no-vendor-prefix': true,
-    'at-rule-whitelist': null,
+    // Number
+    'number-max-precision': 3,
 
-    'comment-word-blacklist': null,
-    'custom-media-pattern': null,
-    'custom-property-pattern': null,
+    // Time
+    'time-min-milliseconds': null,
+
+    // Unit
+    'unit-blacklist': ['cm', 'ex', 'in', 'mm', 'pc', 'pt'],
+    'unit-whitelist': null,
+
+    // Shorthand property
+    'shorthand-property-no-redundant-values': true,
+
+    // Vendor
+    'value-no-vendor-prefix': true,
+
+    // Custom property
+    'custom-property-pattern': regExes.kebabCase,
+
+    // Property
+    'property-blacklist': null,
+    'property-no-vendor-prefix': true,
+    'property-whitelist': null,
+
+    // Declaration
     'declaration-block-no-redundant-longhand-properties': [
       true,
       {
         ignoreShorthands: ['/^flex.*/', '/^grid.*/'],
       },
     ],
-    'declaration-block-single-line-max-declarations': 0,
     'declaration-no-important': null,
     'declaration-property-unit-blacklist': null,
     'declaration-property-unit-whitelist': { 'line-height': [] },
     'declaration-property-value-blacklist': null,
     'declaration-property-value-whitelist': null,
 
-    'max-nesting-depth': [1, { ignore: ['blockless-at-rules'] }],
-    'media-feature-name-blacklist': null,
-    'media-feature-name-no-vendor-prefix': true,
-    'media-feature-name-value-whitelist': null,
-    'media-feature-name-whitelist': null,
-    'no-unknown-animations': true,
-    'number-max-precision': 3,
-    'property-blacklist': ['flex', 'grid'],
-    'property-no-vendor-prefix': true,
-    'property-whitelist': null,
+    // Declaration block
+    'declaration-block-single-line-max-declarations': 0,
+
+    // Selector
     'selector-attribute-operator-blacklist': null,
     'selector-attribute-operator-whitelist': null,
-    'selector-class-pattern': null,
+    'selector-class-pattern': regExes.kebabCase,
     'selector-combinator-blacklist': null,
     'selector-combinator-whitelist': null,
-    'selector-id-pattern': null,
+    'selector-id-pattern': regExes.kebabCase,
     'selector-max-attribute': 1,
     'selector-max-class': 2,
     'selector-max-combinators': 1,
     'selector-max-compound-selectors': 2,
     'selector-max-empty-lines': 0,
-    'selector-max-id': 0,
+    'selector-max-id': 1,
     'selector-max-pseudo-class': null,
     'selector-max-specificity': '0,3,0',
-    'selector-max-type': 1,
+    'selector-max-type': null,
     'selector-max-universal': 1,
-    'selector-nested-pattern': '^(&|@media)',
-    'selector-no-qualifying-type': true,
+    'selector-nested-pattern': null,
+    'selector-no-qualifying-type': [
+      true,
+      {
+        ignore: ['attribute'],
+      },
+    ],
     'selector-no-vendor-prefix': true,
     'selector-pseudo-class-blacklist': null,
     'selector-pseudo-class-whitelist': null,
     'selector-pseudo-element-blacklist': null,
     'selector-pseudo-element-whitelist': null,
-    'shorthand-property-no-redundant-values': true,
-    'time-min-milliseconds': null,
-    'unit-blacklist': ['cm', 'ex', 'in', 'mm', 'pc', 'pt'],
-    'value-no-vendor-prefix': true,
+
+    // Media feature
+    'media-feature-name-blacklist': null,
+    'media-feature-name-no-vendor-prefix': true,
+    'media-feature-name-value-whitelist': null,
+    'media-feature-name-whitelist': null,
+
+    // Custom media
+    'custom-media-pattern': regExes.kebabCase,
+
+    // At-rule
+    'at-rule-blacklist': null,
+    'at-rule-no-vendor-prefix': true,
+    'at-rule-property-requirelist': null,
+    'at-rule-whitelist': null,
+
+    // Comment
+    'comment-word-blacklist': null,
+
+    // General / Sheet
+    'max-nesting-depth': null,
+    'no-unknown-animations': true,
 
     /**
      * Stylistic issues.
      * https://stylelint.io/user-guide/rules/#stylistic-issues
      */
-    'at-rule-empty-line-before': [
-      'always',
-      {
-        except: ['blockless-after-same-name-blockless', 'first-nested'],
-      },
-    ],
-    'at-rule-name-case': 'lower',
-    'at-rule-name-newline-after': null,
-    'at-rule-name-space-after': 'always',
-    'at-rule-semicolon-newline-after': 'always',
-    'at-rule-semicolon-space-before': 'never',
-    'block-closing-brace-empty-line-before': 'never',
-    'block-closing-brace-newline-after': 'always',
-    'block-closing-brace-newline-before': 'always-multi-line',
-    'block-closing-brace-space-after': null,
-    'block-closing-brace-space-before': null,
-    'block-opening-brace-newline-after': 'always-multi-line',
-    'block-opening-brace-newline-before': null,
-    'block-opening-brace-space-after': 'always-single-line',
-    'block-opening-brace-space-before': 'always',
+
+    // Color
     'color-hex-case': 'lower',
-    'color-hex-length': 'long',
-    'comment-empty-line-before': [
-      'always',
-      {
-        except: ['first-nested'],
-        ignore: ['after-comment', 'stylelint-commands'],
-      },
-    ],
-    'comment-whitespace-inside': 'always',
-    'custom-property-empty-line-before': [
-      'always',
-      {
-        except: ['after-custom-property', 'first-nested'],
-        ignore: ['after-comment'],
-      },
-    ],
-    'declaration-bang-space-after': 'never',
-    'declaration-bang-space-before': 'always',
-    'declaration-block-semicolon-newline-after': 'always-multi-line',
-    'declaration-block-semicolon-newline-before': null,
-    'declaration-block-semicolon-space-after': 'always-single-line',
-    'declaration-block-semicolon-space-before': 'never',
-    'declaration-block-trailing-semicolon': 'always',
-    'declaration-colon-newline-after': null,
-    'declaration-colon-space-after': 'always',
-    'declaration-colon-space-before': 'never',
-    'declaration-empty-line-before': [
-      'always',
-      {
-        except: ['after-declaration', 'first-nested'],
-        ignore: ['after-comment'],
-      },
-    ],
+    'color-hex-length': 'short',
+
+    // Font family
     'font-family-name-quotes': 'always-where-recommended',
+
+    // Font weight
     'font-weight-notation': 'numeric',
+
+    // Function
     'function-comma-newline-after': 'always-multi-line',
     'function-comma-newline-before': null,
     'function-comma-space-after': 'always-single-line',
@@ -207,31 +210,60 @@ module.exports = {
     'function-parentheses-space-inside': 'never-single-line',
     'function-url-quotes': 'always',
     'function-whitespace-after': 'always',
-    // Turn off to avoid conflicting with Prettier
-    indentation: null,
-    'length-zero-no-unit': true,
-    'max-empty-lines': 1,
-    // Turn off to avoid conflicting with Prettier
-    'max-line-length': null,
-    'media-feature-colon-space-after': 'always',
-    'media-feature-colon-space-before': 'never',
-    'media-feature-name-case': 'lower',
-    'media-feature-parentheses-space-inside': 'never',
-    'media-feature-range-operator-space-after': 'always',
-    'media-feature-range-operator-space-before': 'always',
-    'media-query-list-comma-newline-after': 'always-multi-line',
-    'media-query-list-comma-newline-before': 'never-multi-line',
-    'media-query-list-comma-space-after': 'always-single-line',
-    'media-query-list-comma-space-before': 'never',
-    'no-eol-whitespace': true,
-    'no-missing-end-of-source-newline': true,
+
+    // Number
     'number-leading-zero': 'always',
     'number-no-trailing-zeros': true,
+
+    // Length
+    'length-zero-no-unit': true,
+
+    // Unit
+    'unit-case': 'lower',
+
+    // Value
+    'value-keyword-case': 'lower',
+
+    // Value list
+    'value-list-comma-newline-after': null,
+    'value-list-comma-newline-before': null,
+    'value-list-comma-space-after': 'always-single-line',
+    'value-list-comma-space-before': 'never',
+    'value-list-max-empty-lines': 0,
+
+    // Custom property
+    'custom-property-empty-line-before': 'never',
+
+    // Property
     'property-case': 'lower',
-    'rule-empty-line-before': [
-      'always-multi-line',
-      { except: ['first-nested'] },
-    ],
+
+    // Declaration
+    'declaration-bang-space-after': 'never',
+    'declaration-bang-space-before': 'always',
+    'declaration-colon-newline-after': null,
+    'declaration-colon-space-after': 'always',
+    'declaration-colon-space-before': 'never',
+    'declaration-empty-line-before': 'never',
+
+    // Declaration block
+    'declaration-block-semicolon-newline-after': 'always-multi-line',
+    'declaration-block-semicolon-newline-before': null,
+    'declaration-block-semicolon-space-after': 'always-single-line',
+    'declaration-block-semicolon-space-before': 'never',
+    'declaration-block-trailing-semicolon': 'always',
+
+    // Block
+    'block-closing-brace-empty-line-before': 'never',
+    'block-closing-brace-newline-after': 'always',
+    'block-closing-brace-newline-before': 'always',
+    'block-closing-brace-space-after': null,
+    'block-closing-brace-space-before': null,
+    'block-opening-brace-newline-after': 'always',
+    'block-opening-brace-newline-before': null,
+    'block-opening-brace-space-after': null,
+    'block-opening-brace-space-before': 'always',
+
+    // Selector
     'selector-attribute-brackets-space-inside': 'never',
     'selector-attribute-operator-space-after': 'never',
     'selector-attribute-operator-space-before': 'never',
@@ -244,23 +276,97 @@ module.exports = {
     'selector-pseudo-element-case': 'lower',
     'selector-pseudo-element-colon-notation': 'double',
     'selector-type-case': 'lower',
+
+    // Selector list
     'selector-list-comma-newline-after': 'always',
-    'selector-list-comma-space-before': 'never',
-    'selector-list-comma-space-after': 'always-single-line',
-    // Turn off to avoid conflicting with Prettier
-    'string-quotes': null,
-    'unit-case': 'lower',
-    'value-keyword-case': 'lower',
-    'value-list-comma-newline-after': null,
-    'value-list-comma-newline-before': null,
-    'value-list-comma-space-after': 'always-single-line',
-    'value-list-comma-space-before': 'never',
-    'value-list-max-empty-lines': 0,
+    'selector-list-comma-newline-before': null,
+    'selector-list-comma-space-after': null,
+    'selector-list-comma-space-before': null,
+
+    // Rule
+    'rule-empty-line-before': [
+      'always',
+      { except: ['after-single-line-comment', 'first-nested'] },
+    ],
+
+    // Media feature
+    'media-feature-colon-space-after': 'always',
+    'media-feature-colon-space-before': 'never',
+    'media-feature-name-case': 'lower',
+    'media-feature-parentheses-space-inside': 'never',
+    'media-feature-range-operator-space-after': 'always',
+    'media-feature-range-operator-space-before': 'always',
+
+    // Media query list
+    'media-query-list-comma-newline-after': 'always-multi-line',
+    'media-query-list-comma-newline-before': 'never-multi-line',
+    'media-query-list-comma-space-after': 'always-single-line',
+    'media-query-list-comma-space-before': 'never',
+
+    // At-rule
+    'at-rule-empty-line-before': [
+      'always',
+      {
+        except: ['blockless-after-same-name-blockless', 'first-nested'],
+      },
+    ],
+    'at-rule-name-case': 'lower',
+    'at-rule-name-newline-after': null,
+    'at-rule-name-space-after': 'always',
+    'at-rule-semicolon-newline-after': 'always',
+    'at-rule-semicolon-space-before': 'never',
+
+    // Comment
+    'comment-empty-line-before': [
+      'always',
+      {
+        except: ['first-nested'],
+        ignore: ['after-comment', 'stylelint-commands'],
+      },
+    ],
+    'comment-whitespace-inside': 'always',
+
+    // General / Sheet
+    indentation: null,
+    linebreaks: null,
+    'max-empty-lines': 1,
+    'max-line-length': null,
+    'no-eol-whitespace': null,
+    'no-missing-end-of-source-newline': null,
+    'no-empty-first-line': true,
+    'unicode-bom': null,
 
     /**
-     * Plugin rules.
+     * Plugins.
      */
+
+    // a11y
+    'a11y/content-property-no-static-value': [true, { severity: 'warning' }],
+    'a11y/font-size-is-readable': null,
+    'a11y/line-height-is-vertical-rhythmed': null,
+    'a11y/media-prefers-reduced-motion': true,
+    'a11y/media-prefers-color-scheme': null,
+    'a11y/no-display-none': null,
+    'a11y/no-obsolete-attribute': [true, { severity: 'warning' }],
+    'a11y/no-obsolete-element': [true, { severity: 'warning' }],
+    'a11y/no-outline-none': true,
+    'a11y/no-spread-text': [true, { severity: 'warning' }],
+    'a11y/no-text-align-justify': [true, { severity: 'warning' }],
+    'a11y/selector-pseudo-class-focus': true,
+
+    // csstree-validator
+    'csstree/validator': true,
+
+    // declaration-block-no-ignored-properties
+    'plugin/declaration-block-no-ignored-properties': true,
+
+    // high-performance-animation
     'plugin/no-low-performance-animation-properties': true,
+
+    // prettier
+    'prettier/prettier': true,
+
+    // order
     'order/order': [
       'custom-properties',
       'dollar-variables',

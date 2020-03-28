@@ -1,6 +1,6 @@
 {
   "name": "backpack.css",
-  "main": "lib/backpack.css",
+  "main": "dist/backpack.css",
   "version": "2.0.0",
   "description": "A lightweight and somewhat opinionated CSS foundation that is best suited to applications 🎒.",
   "keywords": [
@@ -11,12 +11,13 @@
     "css-normalise"
   ],
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
-    "autoprefix": "postcss lib/backpack.css --use autoprefixer --no-map --replace",
-    "bundle": "postcss src/index.css --use postcss-import --no-map --output lib/backpack.css",
-    "clean": "rimraf lib",
+    "autoprefix": "postcss dist/backpack.css --use autoprefixer --no-map --replace",
+    "bundle": "postcss src/index.css --use postcss-import --no-map --output dist/backpack.css",
+    "clean": "rimraf dist",
+    "lint": "stylelint \"**/*.css\"",
     "build": "yarn bundle && yarn autoprefix",
     "prebuild": "yarn clean",
     "version": "yarn build && git add .",
@@ -30,19 +31,44 @@
     "not dead"
   ],
   "repository": "git@github.com:chris-pearce/backpack.css.git",
-  "author": "Chris Pearce <hello@cjpearce.com>",
+  "author": "Chris Pearce <crite70@gmail.com>",
   "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{md,html,css}": [
+      "prettier --write"
+    ],
+    "*.css": [
+      "stylelint --fix"
+    ]
+  },
   "devDependencies": {
-    "autoprefixer": "^9.4.6",
-    "eslint": "^5.12.1",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-config-prettier": "^3.6.0",
-    "eslint-plugin-import": "^2.15.0",
-    "eslint-plugin-prettier": "^3.0.1",
+    "autoprefixer": "^9.7.5",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.9",
     "normalize.css": "^8.0.1",
-    "postcss-cli": "^6.1.1",
+    "postcss-cli": "^7.1.0",
     "postcss-import": "^12.0.1",
+<<<<<<< HEAD
     "prettier": "^1.16.1",
     "rimraf": "^2.6.3"
+=======
+    "prettier": "^2.0.2",
+    "prettier-stylelint": "^0.4.2",
+    "rimraf": "^3.0.2",
+    "stylelint": "^13.2.1",
+    "stylelint-a11y": "^1.2.3",
+    "stylelint-at-rule-no-children": "^0.3.1",
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-csstree-validator": "^1.8.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.3.0",
+    "stylelint-high-performance-animation": "^1.5.0",
+    "stylelint-order": "^4.0.0",
+    "stylelint-prettier": "^1.1.2"
+>>>>>>> wrap up stylelint config
   }
 }

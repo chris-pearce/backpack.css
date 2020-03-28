@@ -10,7 +10,8 @@ code,
 kbd,
 pre,
 samp {
-  font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace; /* 1 */
+  font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier,
+    monospace; /* 1 */
   font-feature-settings: 'kern' 0, 'liga' 0, 'clig' 0, 'onum' 0, 'pnum' 0,
     'tnum', 'lnum', 'zero'; /* 2 */
   font-kerning: none; /* 2 */

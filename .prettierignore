@@ -1,6 +1,3 @@
-lib
-<<<<<<< HEAD
-=======
-test
->>>>>>> initial config setup
+/dist
+/test
 package.json
