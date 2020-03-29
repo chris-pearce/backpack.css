@@ -1,10 +1,6 @@
-# Folders and files
-node_modules/
-lib/
+node_modules
+dist
 npm-debug.log
 yarn-error.log
-
-# Dot files
+idea.md
 .cache
-.DS_Store
-.vscode

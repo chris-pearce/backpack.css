@@ -15,7 +15,7 @@ ol {
 
 @media print {
   /**
-   * NOTE: it's okay to use `!important` here as we're doing it pre-emptively,
+   * NOTE: It's okay to use `!important` here as we're doing it pre-emptively,
    * i.e., we always want these rules to take precedence.
    */
 

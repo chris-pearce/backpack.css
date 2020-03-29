@@ -57,10 +57,12 @@ small {
    * via their `::after` pseudo element.
    */
 
+  /* stylelint-disable-next-line a11y/content-property-no-static-value */
   a[href]::after {
     content: ' (' attr(href) ')';
   }
 
+  /* stylelint-disable-next-line a11y/content-property-no-static-value */
   abbr[title]::after {
     content: ' (' attr(title) ')';
   }

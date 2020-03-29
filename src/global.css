@@ -1,15 +1,4 @@
 /*
- * Remove margins, paddings, and borders from all elements except `<input>` so
- * that everything is on an even playing field.
- */
-
-*:not(input) {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-
-/*
  * Apply the nicer `border-box` value to make life easier when sizing elements.
  */
 
@@ -23,14 +12,26 @@ html {
   box-sizing: inherit;
 }
 
+/*
+ * Remove margins, paddings, and borders from all elements except `<input>` so
+ * that everything is on an even playing field.
+ */
+
+*:not(input) {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
 /**
  * Prevents an unwanted focus outline from appearing around elements that might
  * still respond to pointer events.
  *
- * NOTE: it's okay to use `!important` here as we're doing it preemptively,
+ * NOTE: It's okay to use `!important` here as we're doing it preemptively,
  * i.e., we always want this rule to take precedence.
  */
 
+/* stylelint-disable-next-line a11y/no-outline-none */
 [tabindex='-1']:focus {
   outline: none !important;
 }
@@ -41,6 +42,7 @@ html {
  * indicator (a "focus ring") does not render for mouse users.
  */
 
+/* stylelint-disable-next-line a11y/no-outline-none */
 *:focus:not(:focus-visible) {
   outline: none;
 }
@@ -51,7 +53,7 @@ html {
  * animation. Preferably to the point where all non-essential movement is
  * removed.
  *
- * NOTE: it's okay to use `!important` here as we're doing it pre-emptively,
+ * NOTE: It's okay to use `!important` here as we're doing it pre-emptively,
  * i.e., we always want these rules to take precedence.
  */
 
@@ -72,7 +74,7 @@ html {
    * 1. Remove styles that are poor for printing.
    * 2. Black prints faster.
    *
-   * NOTE: it's okay to use `!important` here as we're doing it pre-emptively,
+   * NOTE: It's okay to use `!important` here as we're doing it pre-emptively,
    * i.e., we always want these rules to take precedence.
    */
 

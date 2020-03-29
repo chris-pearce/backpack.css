@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "yzhang.markdown-all-in-one",
+    "stylelint.vscode-stylelint",
+    "stkb.rewrap",
+    "wayou.vscode-todo-highlight"
+  ]
+}

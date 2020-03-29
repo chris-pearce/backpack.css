@@ -1,10 +1,8 @@
 # Contributing to backpack.css 🎒 <!-- omit in toc -->
 
-Please take a moment to review this document in order to make the contribution process easy and effective for everyone involved.
+Please take a moment to review this document to make the contribution process easy and effective for everyone involved.
 
-Following these guidelines helps to communicate that you respect the time of the developers managing and developing this open source project. In return, they should reciprocate that respect in addressing your issue or assessing patches and features.
-
-This project has a [code of conduct](CODE_OF_CONDUCT.md) that all contributors are expected to follow.
+Following these guidelines helps to communicate that you respect the time of the developers managing and developing this open-source project. In return, they should reciprocate that respect in addressing your issue or assessing patches and features.
 
 ## Table of contents <!-- omit in toc -->
 
@@ -18,8 +16,12 @@ This project has a [code of conduct](CODE_OF_CONDUCT.md) that all contributors a
   - [Process](#process)
 - [Publishing](#publishing)
   - [Step 4 breakdown](#step-4-breakdown)
+- [Linting](#linting)
+  - [Tooling](#tooling)
+  - [Text editor setup](#text-editor-setup)
+  - [`yarn lint`](#yarn-lint)
 - [File structure](#file-structure)
-- [CSS style guide](#css-style-guide)
+- [Code of conduct](#code-of-conduct)
 
 ## Issue tracker
 
@@ -31,9 +33,9 @@ The [issue tracker](https://github.com/chris-pearce/backpack.css/issues) is the 
 
 ### Labels
 
-The issue tracker utilises labels to help organise and identify issues. Each label should be self-explanatory, to further help each has a description.
+The issue tracker utilises labels to help organise and identify issues. Each label should be self-explanatory to help further each has a description.
 
-Please always attach a label(s) to your issue and you can see all of the project's labels [here](https://github.com/chris-pearce/backpack.css/labels).
+Please always attach a label(s) to your issue, and you can see all of the project's labels [here](https://github.com/chris-pearce/backpack.css/labels).
 
 ## Bug reports
 
@@ -69,7 +71,9 @@ Before opening a feature request, please take a moment to find out whether your 
 
 Good pull requests—patches, improvements, new features—are a fantastic help. They should remain focused in scope and avoid containing unrelated commits.
 
-**Please ask first** before embarking on any significant work, otherwise you risk spending a lot of time working on something that the project's developers might not want to merge into the project. And please adhere to the [CSS style guide](#css-style-guide).
+**Please ask first** before embarking on any significant work; otherwise, you risk spending a lot of time working on something that the project's developers might not want to merge into the project. And please adhere to the [linting rules](#linting).
+
+**Working on your first Pull Request?** You can learn how from this _free_ series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github).
 
 ### Process
 
@@ -118,31 +122,52 @@ Follow this process if you'd like your work considered for inclusion in the proj
    git push origin <topic-branch-name>
    ```
 
-7. [Open a Pull Request](https://help.github.com/articles/using-pull-requests/) with a clear title and description. If your Pull Request corresponds to an issue then please make the title the same as the issue title and somewhere in the description include this: _**This fixes #`<x>`**_, where `<x>` is the issue number, also add the relevant issue [label(s)](#labels).
+7. [Open a Pull Request](https://help.github.com/articles/using-pull-requests/) with a clear title and description. If your Pull Request corresponds to an issue, then please make the title the same as the issue title and somewhere in the description include this: _**This fixes #`<x>`**_, where `<x>` is the issue number, also add the relevant issue [label(s)](#labels).
 
-Tests will be added eventually for everything that can have a visual test ([see](https://github.com/chris-pearce/backpack.css/issues/20)), similar to [Normalize.css](https://github.com/necolas/normalize.css) [test file](https://github.com/necolas/normalize.css/blob/master/test.html). In the meantime there is the [html5-test-page.html](test/html5-test-page.html) page that can be used as a quick visual and cross-browser check.
+Tests will be added eventually for everything that can have a visual test ([see](https://github.com/chris-pearce/backpack.css/issues/20)), similar to [Normalize.css](https://github.com/necolas/normalize.css) [test file](https://github.com/necolas/normalize.css/blob/master/test.html). In the meantime, there is the [html5-test-page.html](test/html5-test-page.html) page that can be used as a quick visual and cross-browser check.
 
 **✋ IMPORTANT:** by submitting a patch, you agree to allow the project owner to license your work under the same license that used by the project.
 
 ## Publishing
 
-If you have permission to publish a new version apply the following steps:
+If you have permission to publish a new version, apply the following steps:
 
 1. Make sure you are on the `master` branch with a clean git index.
-2. Add all new changes to [`CHANGELOG.md`](CHANGELOG.md) making sure to follow the existing format.
+2. Add all new changes to [`CHANGELOG.md`](CHANGELOG.md), making sure to follow the existing format.
 3. Update the version number in [`index.css`](src/index.css).
 4. Run: `npm version <update-type> --force` where `<update-type>` is one of the semantic versioning release types: **patch**, **minor**, or **major** (see the README's [Versioning](README.md#versioning) section).
 
 ### Step 4 breakdown
 
-1. Run the `build` script.
-2. Add `CHANGELOG.md` and `index.css` that got modified in steps **1** and **2** to the version commit.
-3. Change the version number in [`package.json`](package.json).
-4. Push the new version commit and tag up to the repository.
-5. Publish the new version to the NPM registry.
-6. Clean the `lib` directory.
+1. Runs the `build` script.
+2. Adds `CHANGELOG.md` and `index.css` to the version commit (as they got modified in steps **1** and **2**).
+3. Changes the version number in [`package.json`](package.json).
+4. Pushes the new version commit and tag up to the repository.
+5. Publishes the new version to the NPM registry.
+6. Cleans the `dist` directory.
 
 _Each step will only run if the one before it passed._
+
+## Linting
+
+### Tooling
+
+backpack.css uses these tools to report and apply its linting rules:
+
+- [stylelint.io](stylelint.io)
+- [Prettier](https://prettier.io/)
+- [EditorConfig](https://editorconfig.org/)
+- [lint-staged](https://github.com/okonet/lint-staged) and [husky](https://github.com/typicode/husky)
+
+### Text editor setup
+
+Your text editor should be set up to work with this project's tooling.
+
+If you're using Visual Studio Code, you'll be prompted to install the relevant [**Extensions**](https://code.visualstudio.com/docs/editor/extension-gallery) and the relevant [**Workspace Settings**](https://code.visualstudio.com/docs/getstarted/settings) will automatically be applied. If you're not using Visual Studio Code, the stylelint.io site has an [Editor plugins](https://stylelint.io/user-guide/complementary-tools/#editor-plugins) section that may help.
+
+### `yarn lint`
+
+Whenever you want to lint all of the source `.css` files you can run: `yarn lint`. And to auto fix errors run: `yarn lint --fix`. A pre-commit hook will check for conformity and where applicable auto fix any errors.
 
 ## File structure
 
@@ -154,11 +179,11 @@ There are two groups (files) that are outside of the **HTML elements reference**
 
 - **[`global.css`](src/global.css)** _which has two usages:_
   1. For styles that are applied to everything typically via the universal selector (`*`).
-  2. For styles that might not be truly global but are still considered "global" enough due to the type of selectors they use, e.g.: `[tabindex='-1']:focus`. Plus, these styles don't fit into any of the other groups.
-- **[`grouped.css`](src/grouped.css)** is for grouping selectors from two or more groups that share the same styles where by repeating the styles across multiple files would be detrimental to the maintainability of the library. In short, this file is to keep things DRY.
+  2. For styles that might not be genuinely global but are still considered "global" enough due to the type of selectors they use, e.g.: `[tabindex='-1']:focus`. Plus, these styles don't fit into any of the other groups.
+- **[`grouped.css`](src/grouped.css)** is for grouping selectors from two or more groups that share the same styles whereby repeating the styles across multiple files would be detrimental to the maintainability of the library. In short, this file is to keep things DRY.
 
 Please always stick to this structure.
 
-## CSS style guide
+## Code of conduct
 
-The CSS style guide is coming soon, [see](https://github.com/chris-pearce/backpack.css/issues/24).
+Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
