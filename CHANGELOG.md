@@ -1,5 +1,13 @@
 # Changes to backpack.css 🎒
 
+## 2.1.0 (March 29, 2020)
+
+- Set up linting ([#9](https://github.com/chris-pearce/backpack.css/issues/9))
+- Update the `CODE_OF_CONDUCT.md` to the latest version.
+- Grammar and punctuation fix applied across the board.
+- Change the build branch name from `lib` to `dist`.
+- Add `.vscode` folder with appropriate **settings** and **extensions** for VS Code contributors.
+
 ## 2.0.0 (January 31, 2019)
 
 - Make backpack.css available on CDN's ([#15](https://github.com/chris-pearce/backpack.css/issues/15)).
