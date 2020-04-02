@@ -15,7 +15,6 @@ Following these guidelines helps to communicate that you respect the time of the
 - [Pull requests](#pull-requests)
   - [Process](#process)
 - [Publishing](#publishing)
-  - [Step 4 breakdown](#step-4-breakdown)
 - [Linting](#linting)
   - [Tooling](#tooling)
   - [Text editor setup](#text-editor-setup)
@@ -130,23 +129,12 @@ Tests will be added eventually for everything that can have a visual test ([see]
 
 ## Publishing
 
+backpack.css uses [np](https://github.com/sindresorhus/np) for publishing.
+
 If you have permission to publish a new version, apply the following steps:
 
-1. Make sure you are on the `master` branch with a clean git index.
-2. Add all new changes to [`CHANGELOG.md`](CHANGELOG.md), making sure to follow the existing format.
-3. Update the version number in [`index.css`](src/index.css).
-4. Run: `npm version <update-type> --force` where `<update-type>` is one of the semantic versioning release types: **patch**, **minor**, or **major** (see the README's [Versioning](README.md#versioning) section).
-
-### Step 4 breakdown
-
-1. Runs the `build` script.
-2. Adds `CHANGELOG.md` and `index.css` to the version commit (as they got modified in steps **1** and **2**).
-3. Changes the version number in [`package.json`](package.json).
-4. Pushes the new version commit and tag up to the repository.
-5. Publishes the new version to the NPM registry.
-6. Cleans the `dist` directory.
-
-_Each step will only run if the one before it passed._
+1. Add all new changes to [`CHANGELOG.md`](CHANGELOG.md), making sure to follow the existing format.
+2. Run: `yarn np <version>` where `<version>` is one of the semantic versioning release types: **patch**, **minor**, or **major**.
 
 ## Linting
 
