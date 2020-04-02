@@ -20,8 +20,8 @@
     "lint": "stylelint \"**/*.css\"",
     "build": "yarn bundle && yarn autoprefix",
     "prebuild": "yarn clean",
-    "version": "yarn build && git add .",
-    "postversion": "git push && git push --tags && npm publish && yarn clean"
+    "version": "yarn build && git add CHANGELOG.md",
+    "postversion": "yarn clean"
   },
   "browserslist": [
     "last 4 versions and > 0.5%",
@@ -46,11 +46,15 @@
       "stylelint --fix"
     ]
   },
+  "np": {
+    "contents": "dist"
+  },
   "devDependencies": {
     "autoprefixer": "^9.7.5",
     "husky": "^4.2.3",
     "lint-staged": "^10.1.1",
     "normalize.css": "^8.0.1",
+    "np": "^6.2.0",
     "postcss-cli": "^7.1.0",
     "postcss-import": "^12.0.1",
     "prettier": "^2.0.2",
