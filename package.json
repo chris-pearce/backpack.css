@@ -20,8 +20,10 @@
     "lint": "stylelint \"**/*.css\"",
     "build": "yarn bundle && yarn autoprefix",
     "prebuild": "yarn clean",
-    "version": "yarn build && git add CHANGELOG.md",
-    "postversion": "yarn clean"
+    "prerelease": "yarn build",
+    "release": "np",
+    "postrelease": "yarn clean",
+    "test": "echo \"No test specified\""
   },
   "browserslist": [
     "last 4 versions and > 0.5%",

@@ -1,5 +1,9 @@
 # Changes to backpack.css 🎒
 
+## 2.2.0 (April 02, 2020)
+
+- Improve the publishing experience ([#22](https://github.com/chris-pearce/backpack.css/issues/22))
+
 ## 2.1.0 (March 29, 2020)
 
 - Set up linting ([#9](https://github.com/chris-pearce/backpack.css/issues/9))
