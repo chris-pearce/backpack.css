@@ -1,7 +1,7 @@
 {
   "name": "backpack.css",
   "main": "dist/backpack.css",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "A lightweight and somewhat opinionated CSS foundation that is best suited to applications 🎒.",
   "keywords": [
     "css",
