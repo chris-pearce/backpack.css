@@ -131,11 +131,10 @@ Tests will be added eventually for everything that can have a visual test ([see]
 
 backpack.css uses [np](https://github.com/sindresorhus/np) for publishing.
 
-If you have permission to publish a new version, apply the following steps on the `master` branch:
+If you have permission to publish a new version, apply the following steps, on the `master` branch:
 
 1. Add all new changes to [`CHANGELOG.md`](CHANGELOG.md), making sure to follow the existing format.
-2. Run: `git add -A` then `git commit -m "updates before release"`.
-3. Run: `yarn release`.
+2. Run the following command: `yarn release`.
 
 ## Linting
 
