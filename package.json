@@ -48,6 +48,9 @@
       "stylelint --fix"
     ]
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "devDependencies": {
     "autoprefixer": "^9.7.5",
     "husky": "^4.2.3",
