@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html class="language-css" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test backpack.css styles</title>
+    <link href="styles/lib-compiled.css" rel="stylesheet" />
+    <link href="styles/index.css" rel="stylesheet" />
+    <link href="vendor/prism/prism.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="root">
+      <article>
+        <header class="l-section l-section--header">
+          <div>
+            <div class="l-header">
+              <h1>
+                <a href="/"
+                  ><span class="c-logo"><span>🎒</span>backpack.css</span></a
+                >
+              </h1>
+            </div>
+            <p class="c-intro">
+              This page is for <strong>visually</strong> testing the
+              backpack.css styles and follows the same structure as the
+              backpack.css source files. Not everything is included as not
+              everything can be visually tested.
+            </p>
+          </div>
+        </header>
+
+        <section class="l-section">
+          <div>
+            <h2>Grouped</h2>
+
+            <div class="c-snippet">
+              <h3>Snippet 1</h3>
+              <ol>
+                <li>Set the font family to use a monospace system font.</li>
+                <li>
+                  Set OpenType features. Remove kerning and common/standard
+                  ligatures. Enable lining numerals, tabular numerals, and
+                  slashed zero.
+                </li>
+              </ol>
+              <div>
+                <div><code>The code element</code></div>
+                <div><kbd>The kbd element</kbd></div>
+                <div><pre>The pre element</pre></div>
+                <div><samp>The samp element</samp></div>
+              </div>
+              <div>
+                <iframe
+                  srcdoc="<div><code>The code element</code></div>
+                <div><kbd>The kbd element</kbd></div>
+                <div><pre>The pre element</pre></div>
+                <div><samp>The samp element</samp></div>"
+                ></iframe>
+              </div>
+              <pre><code>
+code,
+kbd,
+pre,
+samp {
+  font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-feature-settings: 'kern' 0, 'liga' 0, 'clig' 0, 'onum' 0, 'pnum' 0, 'tnum', 'lnum', 'zero';
+  font-kerning: none;
+  font-variant-ligatures: contextual;
+  font-variant-numeric: lining-nums tabular-nums slashed-zero;
+}</code></pre>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <!-- <link rel="stylesheet" href="vendor/highlight/css/atom-one-light.css" />
+    <script src="vendor/highlight/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script> -->
+    <script src="vendor/prism/prism.js"></script>
+    <!-- <script type="module" src="js/index.js"></script> -->
+  </body>
+</html>

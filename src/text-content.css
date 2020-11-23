@@ -1,31 +1,47 @@
 /*
- * In applications lists are ubiquitous and it's extremely rare they're used in
- * long form content therefore it makes sense to strip away their bullets in
- * addition to removing their default margin and padding (see: Resets).
+ * Lists in applications hardly ever require their default markers and
+ * indentation. Therefore, it makes sense to remove these user-agent styles
+ * rather than doing it within each list-type component. When default styled
+ * lists are needed, say, in some long-form copy, then markers and indentation
+ * can get reintroduced within a specific component that handles that type of
+ * list.
+ *
+ * 1. Override sanitize.css's `list-style` styles.
+ * 2. Remove the pseudo-element sanitize.css applies.
+ *
+ * NOTE: The overridden sanitize.css styles above are applied as the fix
+ * sanitize.css applies to prevent VoiceOver from ignoring list semantics in
+ * Safari when list markers get removed (see:
+ * https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html) does not
+ * make a difference when testing in latest Safari.
+ *
+ * TODO: Create a GitHub issue letting sanitize.css know about the NOTE: above.
  */
 
 ul,
-ol {
-  list-style-type: none;
+ol,
+nav ol /* 1 */,
+nav ul /* 1 */ {
+  list-style: none;
+  padding: 0;
 }
 
-/**
- * Print styles.
+nav li::before {
+  display: none; /* 2 */
+}
+
+/*
+ * 1. Apply a solid, thin horizontal rule.
+ * 2. Remove Firefox's `color: gray` style.
+ * 3. Remove user-agent's default 1px height, and common `overflow: hidden`.
+ *
+ * @credit https://github.com/jensimmons/cssremedy/
  */
 
-@media print {
-  /**
-   * NOTE: It's okay to use `!important` here as we're doing it pre-emptively,
-   * i.e., we always want these rules to take precedence.
-   */
-
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
+hr {
+  border-style: solid; /* 1 */
+  border-width: 1px 0 0; /* 1 */
+  color: inherit; /* 2 */
+  height: 0; /* 3 */
+  overflow: visible; /* 3 */
 }

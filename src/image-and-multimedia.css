@@ -1,13 +1,43 @@
-/**
- * Make all images and videos responsive.
+/*
+ * Using a block display, make all embedded elements responsive by default.
  *
- * 1. Override the height to 'auto', otherwise images will be stretched when
- *    setting a width and height attribute on the `<img>` element.
- * 2. Set a maximum relative to the parent.
+ * @credit https://github.com/jensimmons/cssremedy
+ */
+
+audio,
+canvas,
+embed,
+iframe,
+img,
+object,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+ * Maintain intrinsic aspect ratios when `max-width` is applied (`iframe`,
+ * `embed`, and `object` have no intrinsic ratio; their height gets applied
+ * explicitly).
+ *
+ * @credit https://github.com/jensimmons/cssremedy
  */
 
 img,
-video {
-  height: auto; /* 1 */
-  max-width: 100%; /* 2 */
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+ * Remove the default `300px` width, especially as audio files are unlikely to
+ * come with a `width` attribute.
+ *
+ * @credit https://github.com/jensimmons/cssremedy
+*/
+
+audio {
+  width: 100%;
 }

@@ -1,7 +1,7 @@
 /**
- * We scope our heading styles to classes instead of the `<hx>` element selector
- * so our styles are not tied to their semantics, i.e., if you want a `<h4>` to
- * look like a `<h2>` you can easily do this. All of the heading elements are
+ * Scope heading styles to classes instead of the `<hx>` element selector so
+ * that styles get divorced from semantics. I.e., if you want a `<h4>` to look
+ * like a `<h2>` you can easily do this. Therefore, all heading elements get
  * reset to have the same styles as the body copy. See:
  * https://medium.com/fed-or-dead/handling-headings-in-a-ui-component-library-2587de93c890
  */
@@ -13,17 +13,6 @@ h4,
 h5,
 h6 {
   font-size: inherit;
-  font-weight: 400;
+  font-weight: normal;
   line-height: inherit;
-}
-
-/**
- * Print styles.
- */
-
-@media print {
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
 }

@@ -1,6 +1,4 @@
-const regExes = {
-  kebabCase: '^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
-};
+const KEBAB_CASE = /^([a-z][a-z0-9]*)(-[a-z0-9]+)*$/;
 
 module.exports = {
   extends: ['stylelint-prettier/recommended'],
@@ -78,19 +76,26 @@ module.exports = {
      * https://stylelint.io/user-guide/rules/#limit-language-features
      */
 
+    // Alpha-value
+    'alpha-value-notation': 'number',
+
     // Color
+    'color-function-notation': 'modern',
     'color-named': 'always-where-possible',
     'color-no-hex': null,
+
+    // Hue
+    'hue-degree-notation': 'angle',
 
     // Function
     'function-blacklist': null,
     'function-url-no-scheme-relative': true,
-    'function-url-scheme-blacklist': ['data', 'ftp', '/^http/'],
+    'function-url-scheme-disallowed-list': ['data', 'ftp', '/^http/'],
     'function-url-scheme-whitelist': null,
     'function-whitelist': null,
 
     // Keyframes
-    'keyframes-name-pattern': regExes.kebabCase,
+    'keyframes-name-pattern': KEBAB_CASE,
 
     // Number
     'number-max-precision': 3,
@@ -99,7 +104,7 @@ module.exports = {
     'time-min-milliseconds': null,
 
     // Unit
-    'unit-blacklist': ['cm', 'ex', 'in', 'mm', 'pc', 'pt'],
+    'unit-disallowed-list': ['cm', 'ex', 'in', 'mm', 'pc', 'pt'],
     'unit-whitelist': null,
 
     // Shorthand property
@@ -109,7 +114,7 @@ module.exports = {
     'value-no-vendor-prefix': true,
 
     // Custom property
-    'custom-property-pattern': regExes.kebabCase,
+    'custom-property-pattern': KEBAB_CASE,
 
     // Property
     'property-blacklist': null,
@@ -125,7 +130,7 @@ module.exports = {
     ],
     'declaration-no-important': null,
     'declaration-property-unit-blacklist': null,
-    'declaration-property-unit-whitelist': { 'line-height': [] },
+    'declaration-property-unit-allowed-list': { 'line-height': [] },
     'declaration-property-value-blacklist': null,
     'declaration-property-value-whitelist': null,
 
@@ -135,14 +140,14 @@ module.exports = {
     // Selector
     'selector-attribute-operator-blacklist': null,
     'selector-attribute-operator-whitelist': null,
-    'selector-class-pattern': regExes.kebabCase,
+    'selector-class-pattern': KEBAB_CASE,
     'selector-combinator-blacklist': null,
     'selector-combinator-whitelist': null,
-    'selector-id-pattern': regExes.kebabCase,
+    'selector-id-pattern': KEBAB_CASE,
     'selector-max-attribute': 1,
     'selector-max-class': 2,
-    'selector-max-combinators': 1,
-    'selector-max-compound-selectors': 2,
+    'selector-max-combinators': null,
+    'selector-max-compound-selectors': 3,
     'selector-max-empty-lines': 0,
     'selector-max-id': 1,
     'selector-max-pseudo-class': null,
@@ -169,7 +174,7 @@ module.exports = {
     'media-feature-name-whitelist': null,
 
     // Custom media
-    'custom-media-pattern': regExes.kebabCase,
+    'custom-media-pattern': KEBAB_CASE,
 
     // At-rule
     'at-rule-blacklist': null,
@@ -195,9 +200,6 @@ module.exports = {
 
     // Font family
     'font-family-name-quotes': 'always-where-recommended',
-
-    // Font weight
-    'font-weight-notation': 'numeric',
 
     // Function
     'function-comma-newline-after': 'always-multi-line',

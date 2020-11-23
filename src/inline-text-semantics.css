@@ -1,5 +1,13 @@
 /*
- * It's more common for `<em>`s to not to be italic.
+ * Apply a more readable underline for links.
+ */
+
+a {
+  text-decoration-skip-ink: auto;
+}
+
+/*
+ * The majority of the time, italic formatting is not desired.
  */
 
 em {
@@ -7,8 +15,8 @@ em {
 }
 
 /*
- * Override normalize.css's '80%'' font size to be '100%'' as it's rare that we
- * want a `<small>` element's font size to be 'small'.
+ * Override sanitize.css's 80% font size to be 100% as the majority of the time
+ * a smaller font size is not desired.
  */
 
 small {
@@ -16,17 +24,14 @@ small {
 }
 
 /**
- * normalize.css normalizes the `<sub>` and `<sup>` elements, however, if
- * user-agents support the `font-variant-position` property then we use that
- * instead and remove the relevant normalize.css styles.
+ * Apply a more suitable treatment to superscript and subscript text if it's
+ * supported.
  */
 
 @supports (font-variant-position: sub) and (font-variant-position: super) {
   sub,
   sup {
-    font-size: 100%;
-    line-height: inherit;
-    position: static;
+    vertical-align: inherit;
   }
 
   sub {
@@ -35,45 +40,5 @@ small {
 
   sup {
     font-variant-position: super;
-  }
-}
-
-/**
- * Print styles.
- */
-
-@media print {
-  /**
-   * Make links always stand out.
-   */
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  /**
-   * Show the `[href]` and `[title]` attribute values of links and abbreviations
-   * via their `::after` pseudo element.
-   */
-
-  /* stylelint-disable-next-line a11y/content-property-no-static-value */
-  a[href]::after {
-    content: ' (' attr(href) ')';
-  }
-
-  /* stylelint-disable-next-line a11y/content-property-no-static-value */
-  abbr[title]::after {
-    content: ' (' attr(title) ')';
-  }
-
-  /**
-   * Don't show links that are fragment identifiers or use the `javascript:`
-   * pseudo protocol.
-   */
-
-  a[href^='javascript:']::after,
-  a[href^='#']::after {
-    content: '';
   }
 }

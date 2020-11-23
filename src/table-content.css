@@ -1,14 +1,20 @@
 /*
- * Prevent table cell borders from doubling up.
+ * Remove user-agent styles.
  */
 
-table {
-  border-collapse: collapse;
+th {
+  font-weight: normal;
+  text-align: left;
+  text-align: start;
 }
 
 /**
- * Set OpenType features. Remove proportional and oldstyle numerals. Enable
- * lining numerals, tabular numerals, and slashed zero.
+ * Apply OpenType features to table cells:
+ * - Remove proportional numerals.
+ * - Remove old-style numerals
+ * - Apply lining numerals.
+ * - Apply tabular numerals.
+ * - Apply slashed zero.
  *
  * NOTE: See the "OpenType features" section in the README.md.
  */
@@ -16,20 +22,4 @@ table {
 td {
   font-feature-settings: 'onum' 0, 'pnum' 0, 'lnum', 'tnum', 'zero';
   font-variant-numeric: lining-nums tabular-nums slashed-zero;
-}
-
-/**
- * Print styles.
- */
-
-@media print {
-  /**
-   * Make the header row repeated at the top of each printed page.
-   *
-   * ✌︎ Credit http://css-discuss.incutio.com/wiki/Printing_Tables
-   */
-
-  thead {
-    display: table-header-group;
-  }
 }

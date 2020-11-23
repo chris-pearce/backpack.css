@@ -1,2 +1,10 @@
-/dist
-/test
+# Build output folders
+dist/
+test/styles/lib-compiled.css
+
+# Vendor files and folders
+vendor/
+
+# Files that should not be linted
+**/*.md
+**/*.js
