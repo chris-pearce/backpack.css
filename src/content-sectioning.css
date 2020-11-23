@@ -1,8 +1,8 @@
 /**
- * Scope heading styles to classes instead of the `<hx>` element selector so
- * that styles get divorced from semantics. I.e., if you want a `<h4>` to look
- * like a `<h2>` you can easily do this. Therefore, all heading elements get
- * reset to have the same styles as the body copy. See:
+ * Scope heading styles to classes instead of an element selector so that styles
+ * get divorced from semantics. I.e., if you want a `<h4>` to look like a `<h2>`
+ * you can easily do this. Therefore, all heading elements get reset to have the
+ * same styles as the body copy. See:
  * https://medium.com/fed-or-dead/handling-headings-in-a-ui-component-library-2587de93c890
  */
 
