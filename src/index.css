@@ -1,10 +1,24 @@
-@import 'normalize.css';
-@import 'global.css';
-@import 'main-root.css';
-@import 'forms.css';
-@import 'content-sectioning.css';
-@import 'inline-text-semantics.css';
-@import 'text-content.css';
-@import 'image-and-multimedia.css';
-@import 'table-content.css';
-@import 'grouped.css';
+/*! backpack.css v2.2.0 | MIT License | github.com/chris-pearce/backpack.css */
+
+/**
+ * 1. Vendor stylesheets.
+ * 2. See the "File structure" section in CONTRIBUTING.md.
+ * 3. The stylesheet names come from MDN's HTML elements reference document. See
+ *    https://developer.mozilla.org/en-US/docs/Web/HTML/Element.
+ *
+ * NOTE: The order of the imports must be maintained.
+ */
+
+@import 'sanitize.css/evergreen.css'; /* 1 */
+@import 'sanitize.css/forms.evergreen.css'; /* 1 */
+@import 'sanitize.css/reduce-motion.css'; /* 1 */
+@import 'sanitize.css/typography.css'; /* 1 */
+@import 'global.css'; /* 2 */
+@import 'main-root.css'; /* 3 */
+@import 'forms.css'; /* 3 */
+@import 'content-sectioning.css'; /* 3 */
+@import 'inline-text-semantics.css'; /* 3 */
+@import 'text-content.css'; /* 3 */
+@import 'image-and-multimedia.css'; /* 3 */
+@import 'table-content.css'; /* 3 */
+@import 'grouped.css'; /* 2 */

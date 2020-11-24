@@ -16,10 +16,12 @@ Following these guidelines helps to communicate that you respect the time of the
   - [Process](#process)
 - [Publishing](#publishing)
 - [Linting](#linting)
-  - [Tooling](#tooling)
+  - [Tools](#tools)
   - [Text editor setup](#text-editor-setup)
   - [`yarn lint`](#yarn-lint)
 - [File structure](#file-structure)
+- [Testing](#testing)
+- [Updating Browserslist Data](#updating-browserslist-data)
 - [Code of conduct](#code-of-conduct)
 
 ## Issue tracker
@@ -70,7 +72,7 @@ Before opening a feature request, please take a moment to find out whether your 
 
 Good pull requests—patches, improvements, new features—are a fantastic help. They should remain focused in scope and avoid containing unrelated commits.
 
-**Please ask first** before embarking on any significant work; otherwise, you risk spending a lot of time working on something that the project's developers might not want to merge into the project. And please adhere to the [linting rules](#linting).
+**Please ask first** before embarking on any significant work; otherwise, you risk spending a lot of time working on something that the project's developers might not want to merge into the project.
 
 **Working on your first Pull Request?** You can learn how from this _free_ series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github).
 
@@ -107,7 +109,7 @@ Follow this process if you'd like your work considered for inclusion in the proj
    git checkout -b <topic-branch-name>
    ```
 
-4. Commit your changes in logical chunks. Please adhere to these [git commit message conventions](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html) or your code is unlikely be merged into the main project. Use Git's [interactive rebase](https://help.github.com/articles/interactive-rebase) feature to tidy up your commits before making them public.
+4. Commit your changes in logical chunks. Please adhere to these [git commit message conventions](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html) or your code is unlikely to be merged into the main project. Use Git's [interactive rebase](https://help.github.com/articles/interactive-rebase) feature to tidy up your commits before making them public.
 
 5. Locally rebase the upstream development branch into your topic branch:
 
@@ -123,26 +125,33 @@ Follow this process if you'd like your work considered for inclusion in the proj
 
 7. [Open a Pull Request](https://help.github.com/articles/using-pull-requests/) with a clear title and description. If your Pull Request corresponds to an issue, then please make the title the same as the issue title and somewhere in the description include this: _**This fixes #`<x>`**_, where `<x>` is the issue number, also add the relevant issue [label(s)](#labels).
 
-Tests will be added eventually for everything that can have a visual test ([see](https://github.com/chris-pearce/backpack.css/issues/20)), similar to [Normalize.css](https://github.com/necolas/normalize.css) [test file](https://github.com/necolas/normalize.css/blob/master/test.html). In the meantime, there is the [html5-test-page.html](test/html5-test-page.html) page that can be used as a quick visual and cross-browser check.
-
-**✋ IMPORTANT:** by submitting a patch, you agree to allow the project owner to license your work under the same license that used by the project.
+**✋ IMPORTANT:** by submitting a patch, you agree to allow the project owner to license your work under the same license used by the project.
 
 ## Publishing
 
 backpack.css uses [np](https://github.com/sindresorhus/np) for publishing.
 
-If you have permission to publish a new version, apply the following steps, on the `master` branch:
+If you have permission to publish a new version, on the `master` branch, apply the following steps:
 
 1. Add all new changes to [`CHANGELOG.md`](CHANGELOG.md), making sure to follow the existing format.
 2. Run the following command: `yarn release`.
 
 ## Linting
 
-### Tooling
+backpack.css has linting rules applied to the following files:
 
-backpack.css uses these tools to report and apply its linting rules:
+- `.css`
+- `.html`
+- `.js`
 
-- [stylelint.io](stylelint.io)
+That must be adhered to.
+
+### Tools
+
+backpack.css uses the following tools for linting:
+
+- [stylelint.io](https://stylelint.io/)
+- [HTMLHint](https://htmlhint.com/)
 - [Prettier](https://prettier.io/)
 - [EditorConfig](https://editorconfig.org/)
 - [lint-staged](https://github.com/okonet/lint-staged) and [husky](https://github.com/typicode/husky)
@@ -151,11 +160,11 @@ backpack.css uses these tools to report and apply its linting rules:
 
 Your text editor should be set up to work with this project's tooling.
 
-If you're using Visual Studio Code, you'll be prompted to install the relevant [**Extensions**](https://code.visualstudio.com/docs/editor/extension-gallery) and the relevant [**Workspace Settings**](https://code.visualstudio.com/docs/getstarted/settings) will automatically be applied. If you're not using Visual Studio Code, the stylelint.io site has an [Editor plugins](https://stylelint.io/user-guide/complementary-tools/#editor-plugins) section that may help.
+If you're using Visual Studio Code, you'll be prompted to install the relevant [**Extensions**](https://code.visualstudio.com/docs/editor/extension-gallery), and the appropriate [**Workspace Settings**](https://code.visualstudio.com/docs/getstarted/settings) will automatically be applied. For CSS linting and if you're not using Visual Studio Code, the [stylelint.io](https://stylelint.io/) site has an [Editor plugins](https://stylelint.io/user-guide/complementary-tools/#editor-plugins) section that may help.
 
 ### `yarn lint`
 
-Whenever you want to lint all of the source `.css` files you can run: `yarn lint`. And to auto fix errors run: `yarn lint --fix`. A pre-commit hook will check for conformity and where applicable auto fix any errors.
+Whenever you want to lint all of the source files, you can run `yarn lint`. A pre-commit hook will check for conformity and where applicable auto-fix any errors.
 
 ## File structure
 
@@ -163,7 +172,7 @@ The source files are grouped by function using the groups defined in MDN's **[HT
 
 This makes it easier to find what you're looking for especially when this grouping is commonly used amongst other similar CSS libraries.
 
-There are two groups (files) that are outside of the **HTML elements reference** grouping, these are:
+There are two groups (files) that are outside of the **HTML elements reference** grouping; these are:
 
 - **[`global.css`](src/global.css)** _which has two usages:_
   1. For styles that are applied to everything typically via the universal selector (`*`).
@@ -172,6 +181,14 @@ There are two groups (files) that are outside of the **HTML elements reference**
 
 Please always stick to this structure.
 
+## Testing
+
+A comprehensive test suite is underway in the `test` folder. In the meantime, to test for visual regressions when adding new styles to backpack.css, or to see your changes, use the [HTML5 Test Page](https://github.com/cbracco/html5-test-page) which can be accessed in the browser when running `yarn test` (is available at http://localhost:3000/html5-test-page.html).
+
+## Updating Browserslist data
+
+To ensure the latest data is being used for [Browserslist](https://github.com/browserslist/browserslist) (see the [Browser support](README.md#browser-support) section in the `README.md`) you can run `yarn bump-browser-data`. More details [here](https://github.com/browserslist/browserslist#browsers-data-updating).
+
 ## Code of conduct
 
-Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project, you agree to abide by its terms.

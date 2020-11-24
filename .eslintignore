@@ -1,6 +1,5 @@
-# Build output directories
+# Build output folders
 dist/
-test/styles/lib-compiled.css
 
 # Vendor files and folders
 vendor/

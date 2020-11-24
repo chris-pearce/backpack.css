@@ -1,6 +1,26 @@
-node_modules
-dist
-npm-debug.log
-yarn-error.log
-idea.md
+# Node artifact files
+node_modules/
+
+# Build output directories
+dist/
+test/styles/lib-compiled.css
+
+# Files generated at runtime
+*.log
 .cache
+
+# Hidden system files
+.DS_Store
+Thumbs.db
+
+# Personal IDE config files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Package manager debug files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

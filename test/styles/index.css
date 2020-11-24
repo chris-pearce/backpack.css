@@ -1,0 +1,103 @@
+.root {
+  --color-backpack: #e80000;
+  --color-body: #333;
+  --color-white: white;
+  --font-size-base: calc(18 / 16 * 1rem); /* 18px */
+  --font-size-large1x: calc(var(--font-size-base) * 1.25); /* 22px */
+  --font-size-heading: calc(var(--font-size-base) * 2.5);
+  --spacing-quarter: calc(var(--font-size-base) / 4);
+  --spacing-half: calc(var(--font-size-base) / 2);
+  --spacing-base: var(--font-size-base);
+  --spacing-double: calc(var(--font-size-base) * 2);
+  --spacing-triple: calc(var(--font-size-base) * 3);
+  color: var(--color-body);
+}
+
+/**
+ * Element selectors
+ */
+
+.root h2 {
+  box-shadow: 3px 3px 0 1px var(--color-body);
+  display: inline-block;
+  font-size: var(--font-size-heading);
+  margin-block-end: var(--spacing-double);
+  outline: 2px solid var(--color-body);
+  padding-inline-end: var(--spacing-base);
+  padding-inline-start: var(--spacing-base);
+}
+
+.root h3 {
+  font-variant-caps: all-small-caps;
+}
+
+.root pre {
+  white-space: pre-wrap;
+}
+
+.root pre code {
+  padding: var(--spacing-base);
+}
+
+/**
+ * Layout
+ */
+
+.l-section {
+  padding-block-end: var(--spacing-triple);
+  padding-block-start: var(--spacing-triple);
+}
+
+.l-section--header {
+  background-color: var(--color-body);
+  padding-block-start: 0;
+}
+
+.l-section--header h1 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.l-section > div {
+  margin-inline-end: auto;
+  margin-inline-start: auto;
+  max-inline-size: 100ch;
+}
+
+.l-header {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+}
+
+.l-header button {
+  background-color: var(--color-backpack);
+}
+
+/**
+ * Components
+ */
+
+.c-logo {
+  align-items: center;
+  background-color: var(--color-white);
+  display: inline-flex;
+  font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier,
+    monospace;
+  font-size: var(--font-size-large1x);
+  padding-inline-end: var(--spacing-base);
+  padding-inline-start: var(--spacing-base);
+}
+
+.c-logo span {
+  font-family: initial;
+  font-size: 115%;
+  margin-inline-end: 0.5ch;
+}
+
+.c-intro {
+  color: var(--color-white);
+  margin-block-start: var(--spacing-triple);
+  max-inline-size: 70ch;
+}

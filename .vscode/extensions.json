@@ -1,10 +1,13 @@
 {
   "recommendations": [
+    "csstools.postcss",
     "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
-    "yzhang.markdown-all-in-one",
-    "stylelint.vscode-stylelint",
+    "mkaufman.htmlhint",
     "stkb.rewrap",
-    "wayou.vscode-todo-highlight"
+    "stylelint.vscode-stylelint",
+    "wayou.vscode-todo-highlight",
+    "yzhang.markdown-all-in-one"
   ]
 }

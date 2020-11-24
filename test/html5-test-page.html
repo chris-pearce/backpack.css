@@ -1,19 +1,15 @@
-<!--
-  This document's contents comes from: https://github.com/cbracco/html5-test-page.
-  Please do not make any changes.
--->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML5 Test Page</title>
-    <!-- Start backpack.css styles -->
-    <link rel="stylesheet" href="../lib/backpack.css" />
-    <link rel="stylesheet" href="styles.css" />
-    <!-- End backpack.css styles -->
+    <link rel="stylesheet" href="styles/lib-compiled.css" />
+    <link rel="stylesheet" href="styles/html5-test-page.css" />
   </head>
   <body>
+    <!-- NOTE: Do not edit the `<body>` of this document as it comes from:
+    https://github.com/cbracco/html5-test-page -->
     <div id="top" class="page" role="document">
       <header role="banner">
         <h1>HTML5 Test Page</h1>
@@ -69,7 +65,9 @@
         <section id="text">
           <header><h1>Text</h1></header>
           <article id="text__headings">
-            <header><h1>Headings</h1></header>
+            <header>
+              <h1>Headings</h1>
+            </header>
             <div>
               <h1>Heading 1</h1>
               <h2>Heading 2</h2>
@@ -146,7 +144,9 @@
           </article>
           <article id="text__hr">
             <header><h1>Horizontal rules</h1></header>
-            <div><hr /></div>
+            <div>
+              <hr />
+            </div>
             <footer>
               <p><a href="#top">[Top]</a></p>
             </footer>
@@ -412,6 +412,12 @@ P R E F O R M A T T E D T E X T
               <p>
                 <label for="input__text">Text Input</label>
                 <input id="input__text" type="text" placeholder="Text Input" />
+                <input
+                  id="input__text2"
+                  type="text"
+                  placeholder="Text Input"
+                  disabled
+                />
               </p>
               <p>
                 <label for="input__password">Password</label>
@@ -419,6 +425,12 @@ P R E F O R M A T T E D T E X T
                   id="input__password"
                   type="password"
                   placeholder="Type your Password"
+                />
+                <input
+                  id="input__password2"
+                  type="password"
+                  placeholder="Type your Password"
+                  disabled
                 />
               </p>
               <p>
@@ -428,6 +440,12 @@ P R E F O R M A T T E D T E X T
                   type="url"
                   placeholder="http://yoursite.com"
                 />
+                <input
+                  id="input__webaddress2"
+                  type="url"
+                  placeholder="http://yoursite.com"
+                  disabled
+                />
               </p>
               <p>
                 <label for="input__emailaddress">Email Address</label>
@@ -435,6 +453,12 @@ P R E F O R M A T T E D T E X T
                   id="input__emailaddress"
                   type="email"
                   placeholder="name@email.com"
+                />
+                <input
+                  id="input__emailaddress2"
+                  type="email"
+                  placeholder="name@email.com"
+                  disabled
                 />
               </p>
               <p>
@@ -444,6 +468,12 @@ P R E F O R M A T T E D T E X T
                   type="tel"
                   placeholder="(999) 999-9999"
                 />
+                <input
+                  id="input__phone2"
+                  type="tel"
+                  placeholder="(999) 999-9999"
+                  disabled
+                />
               </p>
               <p>
                 <label for="input__search">Search</label>
@@ -452,13 +482,25 @@ P R E F O R M A T T E D T E X T
                   type="search"
                   placeholder="Enter Search Term"
                 />
+                <input
+                  id="input__search2"
+                  type="search"
+                  placeholder="Enter Search Term"
+                  disabled
+                />
               </p>
               <p>
                 <label for="input__text2">Number Input</label>
                 <input
-                  id="input__text2"
+                  id="input__text22"
                   type="number"
                   placeholder="Enter a Number"
+                />
+                <input
+                  id="input__text222"
+                  type="number"
+                  placeholder="Enter a Number"
+                  disabled
                 />
               </p>
               <p>
@@ -487,7 +529,15 @@ P R E F O R M A T T E D T E X T
                 <label for="select">Select</label>
                 <select id="select">
                   <optgroup label="Option Group">
-                    <option>Option One</option> <option>Option Two</option>
+                    <option>Option One</option>
+                    <option>Option Two</option>
+                    <option>Option Three</option>
+                  </optgroup>
+                </select>
+                <select id="select2" disabled>
+                  <optgroup label="Option Group">
+                    <option>Option One</option>
+                    <option>Option Two</option>
                     <option>Option Three</option>
                   </optgroup>
                 </select>
@@ -504,6 +554,13 @@ P R E F O R M A T T E D T E X T
                       name="checkbox"
                       type="checkbox"
                       checked="checked"
+                    />
+                    <input
+                      id="checkbox12"
+                      name="checkbox"
+                      type="checkbox"
+                      checked="checked"
+                      disabled
                     />
                     Choice A</label
                   >
@@ -534,6 +591,14 @@ P R E F O R M A T T E D T E X T
                       type="radio"
                       class="radio"
                       checked="checked"
+                    />
+                    <input
+                      id="radio12"
+                      name="radio"
+                      type="radio"
+                      class="radio"
+                      checked="checked"
+                      disabled
                     />
                     Option 1</label
                   >
@@ -573,6 +638,13 @@ P R E F O R M A T T E D T E X T
                   cols="48"
                   placeholder="Enter your message here"
                 ></textarea>
+                <textarea
+                  id="textarea2"
+                  rows="8"
+                  cols="48"
+                  placeholder="Enter your message here"
+                  disabled
+                ></textarea>
               </p>
             </fieldset>
             <p><a href="#top">[Top]</a></p>
@@ -581,30 +653,49 @@ P R E F O R M A T T E D T E X T
               <p>
                 <label for="ic">Color input</label>
                 <input type="color" id="ic" value="#000000" />
+                <input type="color" id="ic2" value="#000000" disabled />
               </p>
               <p>
                 <label for="in">Number input</label>
                 <input type="number" id="in" min="0" max="10" value="5" />
+                <input
+                  type="number"
+                  id="in2"
+                  min="0"
+                  max="10"
+                  value="5"
+                  disabled
+                />
               </p>
               <p>
                 <label for="ir">Range input</label>
                 <input type="range" id="ir" value="10" />
+                <input type="range" id="ir2" value="10" disabled />
               </p>
               <p>
                 <label for="idd">Date input</label>
                 <input type="date" id="idd" value="1970-01-01" />
+                <input type="date" id="idd2" value="1970-01-01" disabled />
               </p>
               <p>
                 <label for="idm">Month input</label>
                 <input type="month" id="idm" value="1970-01" />
+                <input type="month" id="idm2" value="1970-01" disabled />
               </p>
               <p>
                 <label for="idw">Week input</label>
                 <input type="week" id="idw" value="1970-W01" />
+                <input type="week" id="idw2" value="1970-W01" disabled />
               </p>
               <p>
                 <label for="idt">Datetime input</label>
                 <input type="datetime" id="idt" value="1970-01-01T00:00:00Z" />
+                <input
+                  type="datetime"
+                  id="idt2"
+                  value="1970-01-01T00:00:00Z"
+                  disabled
+                />
               </p>
               <p>
                 <label for="idtl">Datetime-local input</label>
@@ -612,6 +703,12 @@ P R E F O R M A T T E D T E X T
                   type="datetime-local"
                   id="idtl"
                   value="1970-01-01T00:00"
+                />
+                <input
+                  type="datetime-local"
+                  id="idtl2"
+                  value="1970-01-01T00:00"
+                  disabled
                 />
               </p>
             </fieldset>

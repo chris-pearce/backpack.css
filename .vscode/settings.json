@@ -1,21 +1,22 @@
 {
   "css.validate": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "emmet.includeLanguages": {
+    "postcss": "css"
+  },
   "eslint.packageManager": "yarn",
   "files.associations": {
     "*.css": "postcss"
   },
-  "files.exclude": {
-    "**/.git": true,
-    "**/.DS_Store": true
-  },
+  "files.trimTrailingWhitespace": true,
+  "html.format.enable": false,
   "javascript.format.enable": false,
   "javascript.validate.enable": false,
   "less.validate": false,
   "markdown.extension.italic.indicator": "_",
   "markdown.extension.toc.unorderedList.marker": "-",
-  "postcss.validate": false,
-  "prettier.eslintIntegration": true,
-  "prettier.stylelintIntegration": true,
   "rewrap.wrappingColumn": 80,
-  "scss.validate": false
+  "scss.validate": false,
+  "todohighlight.keywords": ["TODO:", "NOTE:"]
 }
