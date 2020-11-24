@@ -185,7 +185,7 @@ Please always stick to this structure.
 
 A comprehensive test suite is underway in the `test` folder. In the meantime, to test for visual regressions when adding new styles to backpack.css, or to see your changes, use the [HTML5 Test Page](https://github.com/cbracco/html5-test-page) which can be accessed in the browser when running `yarn test` (is available at http://localhost:3000/html5-test-page.html).
 
-## Updating Browserslist Data
+## Updating Browserslist data
 
 To ensure the latest data is being used for [Browserslist](https://github.com/browserslist/browserslist) (see the [Browser support](README.md#browser-support) section in the `README.md`) you can run `yarn bump-browser-data`. More details [here](https://github.com/browserslist/browserslist#browsers-data-updating).
 
